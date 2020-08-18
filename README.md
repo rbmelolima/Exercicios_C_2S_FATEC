@@ -1,2 +1,5 @@
-# Exercicios_C_2S_FATEC
-Exercícios em C: 2º Semestre - FATEC Rubens Lara
+![Fatec Rubens Lara](./docs/banner.png)
+
+## Sobre
+Este repositório contem atividades feitas durante o 2º semestre letivo na Fatec Rubens Lara.
+
