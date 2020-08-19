@@ -21,7 +21,7 @@ getchar e putchar:
 
 2 - getchar() -> le um caracter da entrada padrao (no caso teclado) + o ENTER.
 
-A forma geral da função getchar() e´: variavel = getchar();
+A forma geral da funï¿½ï¿½o getchar() eï¿½: variavel = getchar();
 
 O sinal de "=" na linguagem C nao significa igualdade como na matematica mas
 sim atribuicao. O simbolo de "=" assim como todos os outros simbolos da
@@ -79,7 +79,7 @@ scanf.
 
 5 - printf() -> escreve caracteres formatados na saida padrao.(no caso video)
 
-A forma geral da funcao printf() e´:
+A forma geral da funcao printf() eï¿½:
 	printf("<serie de controle>", lista de argumentos);
 
 A <serie de controle> contem, tanto caracteres(letras, numeros, simbolos etc.)
@@ -170,7 +170,7 @@ printf("%-15f\n",valor1);     /* alinhado pela esquerda c/tam = 15 sem prec*/
 /*
 6 - scanf() -> le caracteres formatados da entrada padrao. (no caso teclado)
 
-A forma geral da funcao scanf() e´:
+A forma geral da funcao scanf() eï¿½:
 	scanf("<serie de controle>", lista de argumentos);
 
 Diferentemente do printf, nesta <serie de controle> nao se pode usar caracteres
@@ -188,9 +188,9 @@ Os codigos de formatacao sao os seguintes:
 	%o - leia um inteiro octal
 
 OBS.:
-O dado deve ser armazenada no endereço de memoria que o computador alocou
+O dado deve ser armazenada no endereï¿½o de memoria que o computador alocou
 para a variavel declarada. Por isso o operador de endereco & e' utilizado nesta
-função, fazendo com que o valor digitado pelo usuario seja colocado no endereço
+funï¿½ï¿½o, fazendo com que o valor digitado pelo usuario seja colocado no endereï¿½o
 correto de memoria onde a variavel foi criada pelo computador.
 
 Exemplo:
@@ -362,7 +362,7 @@ printf("\t da variavel var1 recebida como informacao que e' %d\n",var1);
 /*
 10 - Classes de armazenamento de variaveis
 
-Classes de armazenamento define o lugar onde é declarada uma variavel. Como
+Classes de armazenamento define o lugar onde ï¿½ declarada uma variavel. Como
 vimos anteriormente pode ser em 3 lugares. As classes de aramzenamento trata
 apenas das variaveis declaradas fora ou dentro de uma funcao.
 
@@ -477,14 +477,13 @@ printf("imprime os caracteres especiais \\ e \'\r");
     Ex.: recebe 3850 segundos que converte para 1h 4min 10s.
 
 3 - Escreva um programa para ler um numero inteiro, positivo de tres digitos, e gere
-    outro número formado pelos dígitos invertidos do número lido.
-    Ex:   NúmeroLido = 123
-        NúmeroGerado = 321
+    outro nï¿½mero formado pelos dï¿½gitos invertidos do nï¿½mero lido.
+    Ex:   Nï¿½meroLido = 123
+        Nï¿½meroGerado = 321
 
-4 - Escreva um programa que permute o conteúdo de duas variáveis sem utilizar uma
-    variável auxiliar.
+4 - Escreva um programa que permute o conteï¿½do de duas variï¿½veis sem utilizar uma variï¿½vel auxiliar.
 
-5 - Escreva um programa que lê um valor em reais e calcula qual o menor número 
-    possível de notas de $100, $50, $10, $5, $2 e $1 em que o valor lido pode ser 
-    decomposto. Escrever o valor lido e a relação de notas necessárias.
+5 - Escreva um programa que lï¿½ um valor em reais e calcula qual o menor nï¿½mero 
+    possï¿½vel de notas de $100, $50, $10, $5, $2 e $1 em que o valor lido pode ser 
+    decomposto. Escrever o valor lido e a relaï¿½ï¿½o de notas necessï¿½rias.
 */
