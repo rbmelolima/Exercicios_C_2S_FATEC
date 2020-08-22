@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "CAP1 2020 var.C": "cpp"
+    "CAP1 2020 var.C": "cpp",
+    "CAP2 2020 com.C": "cpp",
+    "CAP6 2020 valor.C": "cpp"
   }
 }
