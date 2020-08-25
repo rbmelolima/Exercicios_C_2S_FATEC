@@ -28,6 +28,25 @@ void convertSecondsInTime(int seconds) {
 
 #endif ex2
 
+#ifdef ex3
+main()
+{
+	int n;
+	int centena;
+	int dezena;
+	do{
+		printf("Digite um numero positivo de tres digitos : ");
+		scanf("%d",&n);
+		if(n < 100 || n > 999){
+			printf("\nO numero deve ser positivo e deve ter tres digitos\n");
+		}
+	}while(n < 100 || n > 999);
+	centena = n/100;
+	dezena = n/10 - ( (n/100) * 10 );
+	printf("\nNumero Gerado %d%d%d", ( n - centena*100 - dezena*10 ), dezena, centena);
+}
+#endif ex3
+
 #ifdef ex4
 int main() {
     int a = 0, b = 0;
