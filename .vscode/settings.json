@@ -2,6 +2,8 @@
   "files.associations": {
     "CAP1 2020 var.C": "cpp",
     "CAP2 2020 com.C": "cpp",
-    "CAP6 2020 valor.C": "cpp"
+    "CAP6 2020 valor.C": "cpp",
+    "CAP3 2020 num.C": "cpp",
+    "CAP4 2020 char.C": "cpp"
   }
 }
