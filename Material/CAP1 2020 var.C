@@ -89,7 +89,7 @@ argumentos(tipo da variavel).
 
 Os codigos de formatacao sao os seguintes:
 
-        %c - exibe um unico caracter
+   %c - exibe um unico caracter
 	%d - exibe um inteiro
 	%f - exibe um numero real em ponto flutuante
 	%e - exibe um numero real em ponto flutuante na notacao cientifica
