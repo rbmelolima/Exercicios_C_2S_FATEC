@@ -1,5 +1,30 @@
 #include <stdio.h>
-#define ex2
+#define ex1
+
+#ifdef ex1
+main()
+{
+    short int s; long int l; int i; float f; double d; char ch;
+    printf("Digite um numero int short: ");
+    scanf("%hi",&s);
+    printf("Digite um numero int long: ");
+    scanf("%li",&l);
+    printf("Digite um numero int: ");
+    scanf("%i",&i);
+    printf("Digite um numero float: ");
+    scanf("%f",&f);
+    printf("Digite um numero double: ");
+    scanf("%lf",&d);
+    printf("Digite um char: ");
+    scanf(" %c", &ch);
+
+    printf("        10        20        30        40        50        60\n");
+    printf("12345678901234567890123456789012345678901234567890123456789012345\n");
+    printf("    %-20hi%-20li%-20i\n",s,l,i);
+    printf("               %-20f%-20lf%c",f,d,ch);
+
+}
+#endif
 
 #ifdef ex2
 int main() {
