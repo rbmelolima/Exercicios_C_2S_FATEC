@@ -3,6 +3,78 @@
 
 #define ex3
 
+#ifdef ex1
+main()
+{
+	int min,max;
+    char simbolo;
+    char tecla;
+    do{
+        min = 0;
+        max = 100;
+        printf("\nPense em um numero entre 1 e 99");
+        do{
+            printf("\nO numero que voce pensou e %d? (responda com =, > ou <)  ", ((max-min)/2) + min);
+            do{
+                simbolo = getchar();
+        		getchar();
+                if(simbolo != '=' && simbolo != '<' && simbolo != '>'){
+                    printf("\nResponda com = caso seja igual a seu numero, com < caso seja menor que seu numero e com > caso seja maior que seu numero!\n");
+                }
+            }while(simbolo != '=' && simbolo != '<' && simbolo != '>');
+            if(simbolo == '<'){
+                min = (((max-min)/2) + min);
+            }
+            else if(simbolo == '>'){
+                max = (((max-min)/2) + min);
+            }
+        }while(simbolo != '=');
+        printf("\nDeseja continuar?(s/n) ");
+        tecla = getchar();
+        getchar();
+	}while ((tecla != 'n') && (tecla != 'N'));
+}
+#endif
+
+#ifdef ex2
+main()
+{
+	int min,max;
+    char simbolo;
+    char tecla;
+    do{
+        min = 0;
+        max = 100;
+        printf("\nPense em um numero entre 1 e 99");
+        do{
+            printf("\nO numero que voce pensou e %d? (responda com =, > ou <)  ", ((max-min)/2) + min);
+            do{
+                simbolo = getchar();
+        		getchar();
+                if(simbolo != '=' && simbolo != '<' && simbolo != '>'){
+                    printf("\nResponda com = caso seja igual a seu numero, com < caso seja menor que seu numero e com > caso seja maior que seu numero!\n");
+                }
+            }while(simbolo != '=' && simbolo != '<' && simbolo != '>');
+            switch(simbolo){
+                case '<':
+                {
+                    min = (((max-min)/2) + min);
+                    break;
+                }
+                case '>':
+                {
+                    max = (((max-min)/2) + min);
+                    break;
+                }
+            }
+        }while(simbolo != '=');
+        printf("\nDeseja continuar?(s/n) ");
+        tecla = getchar();
+        getchar();
+	}while ((tecla != 'n') && (tecla != 'N'));
+}
+#endif
+
 int main() {
     int finish = 0;
 
