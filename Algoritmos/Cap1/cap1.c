@@ -20,14 +20,8 @@ main()
 
     printf("        10        20        30        40        50        60\n");
     printf("12345678901234567890123456789012345678901234567890123456789012345\n");
-<<<<<<< Updated upstream
     printf("    %-6hi              %-6li              %-6i\n",s,l,i);
     printf("              %-6.1f              %-6.1lf              %-1c",f,d,ch);
-=======
-    printf("    %-6hi              %-11li%-6i\n",s,l,i);
-    printf("               %-15f%-15lf%-1c",f,d,ch);
->>>>>>> Stashed changes
-
 }
 #endif
 
