@@ -74,28 +74,30 @@ main()
                 }
             } while (simbolo != '=' && simbolo != '<' && simbolo != '>');
 
-            switch (simbolo) {
-                case '<':
-                {
-                    min = (((max - min) / 2) + min);
-                    break;
-                }
-                case '>':
-                {
-                    max = (((max - min) / 2) + min);
-                    break;
-                }
+            switch (simbolo)
+            {
+            case '<':
+            {
+                min = (((max - min) / 2) + min);
+                break;
+            }
+            case '>':
+            {
+                max = (((max - min) / 2) + min);
+                break;
+            }
             }
         } while (simbolo != '=');
 
         printf("\nDeseja continuar?(s/n) ");
         tecla = getchar();
-        
+
         getchar();
     } while ((tecla != 'n') && (tecla != 'N'));
 }
 #endif
 
+#ifdef ex3
 int main()
 {
     int finish = 0;
@@ -136,3 +138,4 @@ int convertHoursInSeconds(int hour, int minute, int second)
     int seconds = (hour * 60 * 60) + (minute * 60) + second;
     return seconds;
 }
+#endif
