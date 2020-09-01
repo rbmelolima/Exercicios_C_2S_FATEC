@@ -164,3 +164,33 @@ main()
 
 }
 #endif
+
+#ifdef ex5
+main()
+{
+    double num; double arredondado; double partefrac; int parteint; int continuar;
+    do{
+        printf("Digite um numero para arredonda-lo: ");
+        scanf("%lf",&num);
+        parteint = (int)num;
+        partefrac = num - (int)num;
+        printf("Parte inteira: %i\n", parteint);
+        printf("Parte fracionario: %lf\n", partefrac);
+        if(partefrac <= 0.24){
+            printf("partefrac <= 0.24\n");
+            arredondado = parteint;
+        }
+        if(0.25 <= partefrac && partefrac <= 0.74){
+            printf("0.25 <= partefrac <= 0.74\n");
+            arredondado = parteint + 0.5;
+        }
+        if(partefrac >= 0.75){
+            printf("partefrac >= 0.75\n");
+            arredondado = parteint + 1;
+        }
+        printf("%.1lf\n",arredondado);
+        printf("Digite (1) para continuar ou (0) para sair: ");
+        scanf("%i",&continuar);
+    }while(continuar == 1);
+}
+#endif
