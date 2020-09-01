@@ -139,3 +139,28 @@ int convertHoursInSeconds(int hour, int minute, int second)
     return seconds;
 }
 #endif
+
+#ifdef ex4
+main()
+{
+    int num; int cont = 0; float media = 0;
+    do{
+        printf("Digite um numero inteiro positivo para continuar ou negativo para obter a media: ");
+        scanf("%i",&num);
+        if(num < 0){
+            if(cont == 0){
+                printf("Nao foi digitado nenhum numero positivo");
+            }
+            else{
+                media = media/cont;
+                printf("A media dos numeros positivos digitados e %.1f", media);
+            }
+        }
+        else{
+            media += num;
+            cont++;
+        }
+    }while(num >= 0);
+
+}
+#endif
