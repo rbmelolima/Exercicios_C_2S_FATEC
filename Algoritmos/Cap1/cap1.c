@@ -1,5 +1,29 @@
 #include <stdio.h>
-#define ex2
+#define ex1
+
+#ifdef ex1
+main()
+{
+    short int s; long int l; int i; float f; double d; char ch;
+    printf("Digite um numero int short: ");
+    scanf("%hi",&s);
+    printf("Digite um numero int long: ");
+    scanf("%li",&l);
+    printf("Digite um numero int: ");
+    scanf("%i",&i);
+    printf("Digite um numero float: ");
+    scanf("%f",&f);
+    printf("Digite um numero double: ");
+    scanf("%lf",&d);
+    printf("Digite um char: ");
+    scanf(" %c", &ch);
+
+    printf("        10        20        30        40        50        60\n");
+    printf("12345678901234567890123456789012345678901234567890123456789012345\n");
+    printf("    %-6hi              %-6li              %-6i\n",s,l,i);
+    printf("              %-6.1f              %-6.1lf              %-1c",f,d,ch);
+}
+#endif
 
 #ifdef ex2
 int main() {
@@ -27,6 +51,25 @@ void convertSecondsInTime(int seconds) {
 }
 
 #endif ex2
+
+#ifdef ex3
+main()
+{
+	int n;
+	int centena;
+	int dezena;
+	do{
+		printf("Digite um numero positivo de tres digitos : ");
+		scanf("%d",&n);
+		if(n < 100 || n > 999){
+			printf("\nO numero deve ser positivo e deve ter tres digitos\n");
+		}
+	}while(n < 100 || n > 999);
+	centena = n/100;
+	dezena = n/10 - ( (n/100) * 10 );
+	printf("\nNumero Gerado %d%d%d", ( n - centena*100 - dezena*10 ), dezena, centena);
+}
+#endif ex3
 
 #ifdef ex4
 int main() {
