@@ -3,6 +3,56 @@
 
 #define ex4
 
+#ifdef ex1
+main()
+{
+    int numint[3]; long int numlong[3]; unsigned char charuns[3]; float numfloat[3]; double numdouble[3];
+    printf("Digite o primeiro numero int: ");
+    scanf("%i",&numint[0]);
+    printf("Digite o segundo numero int: ");
+    scanf("%i",&numint[1]);
+    printf("Digite o terceiro numero int: ");
+    scanf("%i",&numint[2]);
+
+    printf("Digite o primeiro numero long int: ");
+    scanf("%li",&numlong[0]);
+    printf("Digite o segundo numero long int: ");
+    scanf("%li",&numlong[1]);
+    printf("Digite o terceiro numero long int: ");
+    scanf("%li",&numlong[2]);
+
+    printf("Digite o primeiro char: ");
+    scanf(" %c",&charuns[0]);
+    printf("Digite o segundo char: ");
+    scanf(" %c",&charuns[1]);
+    printf("Digite o terceiro char: ");
+    scanf(" %c",&charuns[2]);
+
+    printf("Digite o primeiro numero float: ");
+    scanf(" %f",&numfloat[0]);
+    printf("Digite o segundo numero float: ");
+    scanf(" %f",&numfloat[1]);
+    printf("Digite o terceiro numero float: ");
+    scanf(" %f",&numfloat[2]);
+
+    printf("Digite o primeiro numero double: ");
+    scanf(" %lf",&numdouble[0]);
+    printf("Digite o primeiro numero double: ");
+    scanf(" %lf",&numdouble[1]);
+    printf("Digite o primeiro numero double: ");
+    scanf(" %lf",&numdouble[2]);
+
+    printf("        10        20        30        40        50\n");
+    printf("12345678901234567890123456789012345678901234567890\n");
+    printf("  %-6i              %-6li              %-1c\n",numint[0],numlong[0],charuns[0]);
+    printf("            %-8.1f            %-8.1lf\n",numfloat[0],numdouble[0]);
+    printf("  %-6i              %-6li              %-1c\n",numint[1],numlong[1],charuns[1]);
+    printf("            %-8.1f            %-8.1lf\n",numfloat[1],numdouble[1]);
+    printf("  %-6i              %-6li              %-1c\n",numint[2],numlong[2],charuns[2]);
+    printf("            %-8.1f            %-8.1lf\n",numfloat[2],numdouble[2]);
+}
+#endif
+
 #ifdef ex3
 int main() {
     int lengthComponents = 10;
