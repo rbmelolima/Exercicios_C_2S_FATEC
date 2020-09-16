@@ -18,6 +18,7 @@ main()
 			}
 		}
 		printf("A string digitada com seus caracteres maiusculus e \"%s\"", caracteres);
+        
         printf("\nDeseja continuar?(s/n) ");
         tecla = getchar();
         getchar();
