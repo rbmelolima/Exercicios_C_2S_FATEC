@@ -18,11 +18,8 @@ OBS.: Todos os programa devem ser finalizados pelo usuario.
     123456789012345678901234567890123456789012345678901234567890
         string1             string2             string3
 
-3 - Receba via teclado uma cadeia de caracteres (10) e converta todos os caracteres 
-    para letras maiusculas. 
+3 - Receba via teclado uma cadeia de caracteres (10) e converta todos os caracteres para letras maiusculas. 
 
-4 - Receba via teclado uma cadeia de caracteres (10) e converta todos os caracteres 
-    para letras minusculas.
+4 - Receba via teclado uma cadeia de caracteres (10) e converta todos os caracteres para letras minusculas.
 
-5 - Receba 2 string de ate 10 caracteres via teclado, compare-as mostrando como
-    resultado se são IGUAIS ou DIFERENTES.
+5 - Receba 2 string de ate 10 caracteres via teclado, compare-as mostrando como resultado se são IGUAIS ou DIFERENTES.
