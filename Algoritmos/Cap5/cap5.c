@@ -1,5 +1,6 @@
 #include <stdio.h>
-#define ex5
+
+#define ex3
 
 #ifdef ex1
 main()
@@ -17,7 +18,7 @@ main()
         printf("Subtracao: %i - %i = %i\n", num1, num2, num1 - num2);
         printf("Multiplicacao: %i * %i = %i\n", num1, num2, num1 * num2);
         printf("Divisao: %i / %i = %.1f\n", num1, num2, (float)num1 / (float)num2);
-        
+
         printf("Digite (1) para continuar ou (0) para sair: ");
         scanf("%i", &continuar);
     } while (continuar == 1);
@@ -47,6 +48,32 @@ main()
         printf("Digite (1) para continuar ou (0) para sair: ");
         scanf("%i", &continuar);
     } while (continuar == 1);
+}
+#endif
+
+#ifdef ex3
+main()
+{
+    int finish = 0;
+    unsigned number1, number2;
+
+    while (finish == 0)
+    {
+        printf("\n\nDigite um número inteiro: ");
+        scanf("%d", &number1);
+
+        printf("Digite outro número inteiro: ");
+        scanf("%d", &number2);
+
+        printf("%d | %d => %3d  0x%x\n", number1, number2, number1 | number2, number1 | number2);
+        printf("%d & %d => %3d  0x%x\n", number1, number2, number1 & number2, number1 & number2);
+        printf("%d ^ %d => %3d  0x%x\n", number1, number2, number1 ^ number2, number1 ^ number2);
+
+        printf("\n\nDeseja continuar? (0) Sim (1) Não: ");
+        scanf("%d", &finish);
+
+        system("cls");
+    }
 }
 #endif
 
