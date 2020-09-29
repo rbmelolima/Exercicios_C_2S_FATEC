@@ -16,7 +16,7 @@ e' chamado de operando.
 
 A atribuicao simples de variaveis, se faz com o operador sinal de "=". A
 linguagem C trata o sinal de igual "=" como sendo um operador e nao como sinal
-de igual "=" da matematica. Ele atribui um valor ou resultado de uma expressão,
+de igual "=" da matematica. Ele atribui um valor ou resultado de uma expressï¿½o,
 que esta' a sua direita, para a variavel especificada a sua esquerda.
 
 Sua forma geral e':
@@ -29,18 +29,16 @@ Exemplos: */
 #ifdef ex1
 main()
 {
-int x,y,z;
+	int x, y, z;
 
+	x = 2; /* atribui uma constante "2" a variavel "x" */
+	printf("o valor de x e': %d\n", x);
 
-x = 2;    /* atribui uma constante "2" a variavel "x" */
-printf("o valor de x e': %d\n",x);
+	y = x + 4; /* atribui o resultado da expressao "x + 4" a variavel "y" */
+	printf("o valor de y e': %d\n", y);
 
-y = x + 4;   /* atribui o resultado da expressao "x + 4" a variavel "y" */
-printf("o valor de y e': %d\n",y);
-
-z = (x + 4) * (y - 10);
-printf("o valor de z e': %d\n",z);
-
+	z = (x + 4) * (y - 10);
+	printf("o valor de z e': %d\n", z);
 }
 #endif
 
@@ -86,37 +84,35 @@ Exemplo:*/
 #ifdef ex2
 main()
 {
-int a,b,c,x,y;
-float i,j,k,l;
+	int a, b, c, x, y;
+	float i, j, k, l;
 
+	x = 10;	 /* operador atribuicao simples */
+	y = ++x; /* operador incrementa declarado "antes" da variavel "x" */
 
-x = 10;		/* operador atribuicao simples */
-y = ++x;     /* operador incrementa declarado "antes" da variavel "x" */
+	printf("o valor atribuido a y e' = %d e o de x e': %d\n\n", y, x);
 
-printf("o valor atribuido a y e' = %d e o de x e': %d\n\n",y,x);
+	x = 20;
+	y = x++; /* operador incrementa declarado "depois" da variavel "x" */
 
-x = 20;
-y = x++;    /* operador incrementa declarado "depois" da variavel "x" */
+	printf("o valor atribuido a y e' = %d e o de x e': %d\n\n\n", y, x);
 
-printf("o valor atribuido a y e' = %d e o de x e': %d\n\n\n",y,x);
+	a = 15; /* operador atribuicao simples */
+	b = 9;
 
-a = 15;		/* operador atribuicao simples */
-b = 9;
+	c = a++ + ++b;
+	printf("valor de a = %d valor de b = %d e o valor de c = %d\n\n\n\n", a, b, c);
 
-c = a++ + ++b;
-printf("valor de a = %d valor de b = %d e o valor de c = %d\n\n\n\n",a,b,c);
+	i = 20.123;
+	j = 3.77;
 
-i=20.123;
-j=3.77;
+	k = i / j;
 
-k=i/j;
+	l = i * j;
 
-l=i*j;
-
-printf("valor de i e' = %f e o valor de j e' = %f \n\n",i,j);
-printf("a soma de i e j e' = %f , e a subtracao e' = %f\n\n",i+j,i-j);
-printf("a divisao entre i e j e' = %f , a multiplicacao e' = %f\n\n",k,l);
-
+	printf("valor de i e' = %f e o valor de j e' = %f \n\n", i, j);
+	printf("a soma de i e j e' = %f , e a subtracao e' = %f\n\n", i + j, i - j);
+	printf("a divisao entre i e j e' = %f , a multiplicacao e' = %f\n\n", k, l);
 }
 #endif
 
@@ -143,35 +139,33 @@ Exemplo:*/
 #ifdef ex3
 main()
 {
-int a,b,c,d;
-int k,l;
-float i,j;
+	int a, b, c, d;
+	int k, l;
+	float i, j;
 
+	a = 100; /* valores inteiros */
+	b = 200;
 
-a=100;     /* valores inteiros */
-b=200;
+	c = a <= 200; /* atribui o resultado da avaliacao relacional a "c" */
+	d = b > 100;
 
-c = a <= 200;  /* atribui o resultado da avaliacao relacional a "c" */
-d = b > 100;
+	printf("o valor de a e' %d e de b e' %d\n\n", a, b);
+	printf("o resultado da relacao a <= 200 e' %d \n\n", c);
+	printf("o resultado da relacao b > 100 e' %d \n\n", d);
+	printf("o resultado da relacao a == 100 e' %d \n\n", a == 100);
+	printf("o resultado da relacao a != 100 e' %d \n\n\n", a != 100);
 
-printf("o valor de a e' %d e de b e' %d\n\n",a,b);
-printf("o resultado da relacao a <= 200 e' %d \n\n",c);
-printf("o resultado da relacao b > 100 e' %d \n\n",d);
-printf("o resultado da relacao a == 100 e' %d \n\n",a == 100);
-printf("o resultado da relacao a != 100 e' %d \n\n\n",a != 100);
+	i = 100.5; /* valores em ponto flutuante */
+	j = 200.7;
 
-i=100.5;   /* valores em ponto flutuante */
-j=200.7;
+	k = i <= 200.114; /* atribui o resultado da avaliacao relacional a "k" */
+	l = j > 100.554;
 
-k = i <= 200.114; /* atribui o resultado da avaliacao relacional a "k" */
-l = j > 100.554;
-
-printf("o valor de i e' %f e de j e' %f\n\n",i,j);
-printf("o resultado da relacao i <= 200.114 e' %d \n\n",k);
-printf("o resultado da relacao i <= 100.554 e' %d \n\n",l);
-printf("o resultado da relacao i == 200.114 e' %d \n\n",i == 200.114);
-printf("o resultado da relacao i != 200.114 e' %d \n\n",i != 200.114);
-
+	printf("o valor de i e' %f e de j e' %f\n\n", i, j);
+	printf("o resultado da relacao i <= 200.114 e' %d \n\n", k);
+	printf("o resultado da relacao i <= 100.554 e' %d \n\n", l);
+	printf("o resultado da relacao i == 200.114 e' %d \n\n", i == 200.114);
+	printf("o resultado da relacao i != 200.114 e' %d \n\n", i != 200.114);
 }
 #endif
 
@@ -196,35 +190,33 @@ Exemplos:*/
 #ifdef ex4
 main()
 {
-int a,b,c,d;
-int k,l,m;
-float i,j;
+	int a, b, c, d;
+	int k, l, m;
+	float i, j;
 
+	a = 100;
+	b = 200;
 
-a=100;
-b=200;
-
-/* combina os operadores relacionais com os logicos. Nestas declaracoes, 1. se
+	/* combina os operadores relacionais com os logicos. Nestas declaracoes, 1. se
 avalia as relacoes, com os resultados (0 falso ou 1 verdade) realiza-se a
 operacao logica */
-c = a <= 200 && b > 100;
-d = a >   50 || b != 100;
+	c = a <= 200 && b > 100;
+	d = a > 50 || b != 100;
 
-printf("o valor de a e' %d e de b e' %d\n\n",a,b);
-printf("o resultado da relacao a <= 200 && b > 100  e' %d \n\n",c);
-printf("o resultado da relacao a <= 50 && b > 100  e' %d \n\n",a<=50 && b>100);
-printf("o resultado da relacao a > 50 || b != 100 e' %d \n\n",d);
-printf("o resultado da relacao a != 100 || b > 200 e' %d\n\n",a!=100 || b>200);
+	printf("o valor de a e' %d e de b e' %d\n\n", a, b);
+	printf("o resultado da relacao a <= 200 && b > 100  e' %d \n\n", c);
+	printf("o resultado da relacao a <= 50 && b > 100  e' %d \n\n", a <= 50 && b > 100);
+	printf("o resultado da relacao a > 50 || b != 100 e' %d \n\n", d);
+	printf("o resultado da relacao a != 100 || b > 200 e' %d\n\n", a != 100 || b > 200);
 
-i=100.5;   /* valores em ponto flutuante */
-j=200.7;
+	i = 100.5; /* valores em ponto flutuante */
+	j = 200.7;
 
-printf("\no valor de i e' %f e de j e' %f\n\n",i,j);
-m = i<=200.114 && j>100.554;
-printf("o resultado da expressao (i <= 200.114 && j > 100.554) e' %d \n\n",m);
-printf("o resultado da expressao (i != 200.114 || j == 100.554) e' %d \n\n",
-i != 200.114 || j == 100.554);
-
+	printf("\no valor de i e' %f e de j e' %f\n\n", i, j);
+	m = i <= 200.114 && j > 100.554;
+	printf("o resultado da expressao (i <= 200.114 && j > 100.554) e' %d \n\n", m);
+	printf("o resultado da expressao (i != 200.114 || j == 100.554) e' %d \n\n",
+				 i != 200.114 || j == 100.554);
 }
 #endif
 
@@ -253,18 +245,17 @@ Exemplos:*/
 #ifdef ex5
 main()
 {
-int a,b;
-a = 0x64; /*notacao hexadecimal*/ 	/* 100 = 0110 0100 */
-b = 0x32;				/* 50  = 0011 0010 */
+	int a, b;
+	a = 0x64; /*notacao hexadecimal*/ /* 100 = 0110 0100 */
+	b = 0x32;													/* 50  = 0011 0010 */
 
-printf(" Operadores bit-a-bit\n");
-printf(" AND                 a & b --> %3d  0x%x\n",a & b,a & b); /* 0x20 */
-printf(" OU                  a | b --> %3d  0x%x\n",a | b,a | b); /* 0x76 */
-printf(" OU EXCLUSIVO        a ^ b --> %3d  0x%x\n",a ^ b,a ^ b); /* 0x56 */
-printf(" NOT               ~0x2264 -->      0x%x\n",~0x2264);     /* dd9b */
-printf(" desloc. a direita  a >> 3 --> %3d  0x%x\n",a>>3,a>>3);   /* 0x0c */
-printf(" desloc. a esquerda a << 1 --> %3d  0x%x\n",a<<1,a<<1);   /* 0xc8 */
-
+	printf(" Operadores bit-a-bit\n");
+	printf(" AND                 a & b --> %3d  0x%x\n", a & b, a & b);		/* 0x20 */
+	printf(" OU                  a | b --> %3d  0x%x\n", a | b, a | b);		/* 0x76 */
+	printf(" OU EXCLUSIVO        a ^ b --> %3d  0x%x\n", a ^ b, a ^ b);		/* 0x56 */
+	printf(" NOT               ~0x2264 -->      0x%x\n", ~0x2264);				/* dd9b */
+	printf(" desloc. a direita  a >> 3 --> %3d  0x%x\n", a >> 3, a >> 3); /* 0x0c */
+	printf(" desloc. a esquerda a << 1 --> %3d  0x%x\n", a << 1, a << 1); /* 0xc8 */
 }
 #endif
 
@@ -296,16 +287,15 @@ Exemplos:*/
 #ifdef ex6
 main()
 {
-int a,b,x,y,z;
-x = y = z = 10;
+	int a, b, x, y, z;
+	x = y = z = 10;
 
-printf("x = %d e y = %d\n\n",x,y);
-printf("x = x + 10 --> %d \t\t y += 10 --> %d\n\n",x = x + 10,y +=10);
-printf("x = x - 10 --> %d \t\t y -= 10 --> %d\n\n",x = x - 10,y -= 10);
-printf("x=x + (30/z) --> %d \t\t y+=(30/z) --> %d\n\n",x=x + (30/z),y+=(30/z));
-printf("x = x ^ 0x3d --> %d  \t\t y ^= 0x3d --> %d\n\n",x = x ^ 0x3d,y ^= 0x3d);
-printf("x = x >> 4 --> %d \t\t y >>= 4 --> %d\n",x = x >> 4,y >>= 4);
-
+	printf("x = %d e y = %d\n\n", x, y);
+	printf("x = x + 10 --> %d \t\t y += 10 --> %d\n\n", x = x + 10, y += 10);
+	printf("x = x - 10 --> %d \t\t y -= 10 --> %d\n\n", x = x - 10, y -= 10);
+	printf("x=x + (30/z) --> %d \t\t y+=(30/z) --> %d\n\n", x = x + (30 / z), y += (30 / z));
+	printf("x = x ^ 0x3d --> %d  \t\t y ^= 0x3d --> %d\n\n", x = x ^ 0x3d, y ^= 0x3d);
+	printf("x = x >> 4 --> %d \t\t y >>= 4 --> %d\n", x = x >> 4, y >>= 4);
 }
 #endif
 
@@ -330,36 +320,35 @@ Exemplo:*/
 #ifdef ex7
 main()
 {
-int a,b,y;
-a = 20;     /* troque este valor para 5 e compile uma 2. vez */
-b = 10;
+	int a, b, y;
+	a = 20; /* troque este valor para 5 e compile uma 2. vez */
+	b = 10;
 
-/* utiliza os operadores relacional (>) e logico (&&) */
-y = (b > 9) && (a > 10) ? 100 :2*100;  /* avaliando a resposta da expressao o
+	/* utiliza os operadores relacional (>) e logico (&&) */
+	y = (b > 9) && (a > 10) ? 100 : 2 * 100; /* avaliando a resposta da expressao o
                                         resultado sera y = 100 se verdade (1) e
                                         y = 200 se falso (0) */
-printf("o valor de y = %d",y);
-
+	printf("o valor de y = %d", y);
 }
 #endif
 
 #ifdef ex8
 main()
 {
-int a,b,x,z;
+	int a, b, x, z;
 
-/* usando o comando if-else */
-a = 10;
-if (a > 0)
-        b=-150;
-else
-        b=150;
-printf("com o comando if-else -> %d\n\n",b);
+	/* usando o comando if-else */
+	a = 10;
+	if (a > 0)
+		b = -150;
+	else
+		b = 150;
+	printf("com o comando if-else -> %d\n\n", b);
 
-/*usando o operador ternario ? : */
-x = 20;
-z = x > 0 ? -150 : 150;
-printf("com o operador ternario -> %d\n",z);
+	/*usando o operador ternario ? : */
+	x = 20;
+	z = x > 0 ? -150 : 150;
+	printf("com o operador ternario -> %d\n", z);
 }
 #endif
 
@@ -392,17 +381,16 @@ Exemplo:*/
 #ifdef ex9
 main()
 {
-float i,j,k;
-int l;
+	float i, j, k;
+	int l;
 
-i = 20.123;
-j = 3.77;
+	i = 20.123;
+	j = 3.77;
 
-k = i / j;
-l = (int)i % (int)j;
+	k = i / j;
+	l = (int)i % (int)j;
 
-printf("\n\ndivisao entre i e j = %f e o resto e' = %d",k,l);
-
+	printf("\n\ndivisao entre i e j = %f e o resto e' = %d", k, l);
 }
 #endif
 
@@ -421,24 +409,23 @@ Exemplo:*/
 
 main()
 {
-/* mostra quantos bytes cada tipo de variavel ocupa na memoria  */
+	/* mostra quantos bytes cada tipo de variavel ocupa na memoria  */
 
-int i;
-short int si;
-long int li;
-unsigned int ui;
-char c;
-float f;
-double d;
+	int i;
+	short int si;
+	long int li;
+	unsigned int ui;
+	char c;
+	float f;
+	double d;
 
-printf("inteiros ---------------> %d bytes\n",sizeof(i));
-printf("inteiros curtos --------> %d bytes\n",sizeof(si));
-printf("inteiros longos --------> %d bytes\n",sizeof(li));
-printf("inteiros sem sinal -----> %d bytes\n",sizeof(ui));
-printf("um caracter ------------> %d bytes\n",sizeof(c));
-printf("float ------------------> %d bytes\n",sizeof(f));
-printf("double -----------------> %d bytes\n",sizeof(d));
-
+	printf("inteiros ---------------> %d bytes\n", sizeof(i));
+	printf("inteiros curtos --------> %d bytes\n", sizeof(si));
+	printf("inteiros longos --------> %d bytes\n", sizeof(li));
+	printf("inteiros sem sinal -----> %d bytes\n", sizeof(ui));
+	printf("um caracter ------------> %d bytes\n", sizeof(c));
+	printf("float ------------------> %d bytes\n", sizeof(f));
+	printf("double -----------------> %d bytes\n", sizeof(d));
 }
 #endif
 
@@ -514,7 +501,7 @@ Menor prioridade
 			EXERCICIOS
 
 *****************************************************************************
-OBS.: Faça um loop infinito e defina uma saida em todos os exercícios.
+OBS.: Faï¿½a um loop infinito e defina uma saida em todos os exercï¿½cios.
 
 1 - Escreva um programa que receba via teclado 2 numeros inteiros e
     imprima-os no video com o resultado das 4 operacoes aritmeticas.
@@ -537,4 +524,3 @@ OBS.: Faça um loop infinito e defina uma saida em todos os exercícios.
 6 - Escreva um programa para determinar o dia da semana de uma determinada 
     data (dia, mes e ano). 
 */
-

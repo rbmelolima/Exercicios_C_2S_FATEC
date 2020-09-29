@@ -37,12 +37,12 @@ Exemplo:*/
 #ifdef ex1
 main()
 {
-char c;
+   char c;
 
-printf("digite um caracter : ");
-c = getchar();
-printf("o caracter digitado e': ");
-putchar(c);
+   printf("digite um caracter : ");
+   c = getchar();
+   printf("o caracter digitado e': ");
+   putchar(c);
 }
 #endif
 
@@ -103,22 +103,21 @@ Exemplo:
 #ifdef ex2
 main()
 {
-char carac = 'A';
-int idade = 41;
-int peso = 80;
-int altura = 178;
-float preco = 572.34;
-float cient = 129845e-4;
+   char carac = 'A';
+   int idade = 41;
+   int peso = 80;
+   int altura = 178;
+   float preco = 572.34;
+   float cient = 129845e-4;
 
-printf("exemplos dos codigos de formatacao e variaveis simples\n");
-printf("A letra e': %c\n\n", carac);
-printf("A letra e': %d\n\n", carac);
-printf("idade do usuario: %d peso: %d altura: %d\n\n", idade, peso , altura);
-printf("O preco do item e': %f\n\n", preco);
-printf("A area do circulo e' %e\n\n", cient);
-printf("Exibir 0.1234 resulta em %g\n\n", 0.1234);
-printf("Exibir 0.00001234 resulta em %g\n\n", 0.00001234);
-
+   printf("exemplos dos codigos de formatacao e variaveis simples\n");
+   printf("A letra e': %c\n\n", carac);
+   printf("A letra e': %d\n\n", carac);
+   printf("idade do usuario: %d peso: %d altura: %d\n\n", idade, peso, altura);
+   printf("O preco do item e': %f\n\n", preco);
+   printf("A area do circulo e' %e\n\n", cient);
+   printf("Exibir 0.1234 resulta em %g\n\n", 0.1234);
+   printf("Exibir 0.00001234 resulta em %g\n\n", 0.00001234);
 }
 #endif
 
@@ -146,24 +145,23 @@ Exemplos:*/
 #ifdef ex3
 main()
 {
-int valor = 512;
-float valor1= 10.5473;
+   int valor = 512;
+   float valor1 = 10.5473;
 
-printf("        10        20\n");
-printf("12345678901234567890\n");
+   printf("        10        20\n");
+   printf("12345678901234567890\n");
 
-/* campos numericos */
-printf("%d\n",valor);		/* sem alinhamento e tamanho de campo*/
-printf("%6d\n",valor);		/* alinhado a direita c/ tam = 6 */
-printf("%-6d\n",valor);		/* alinhado a esquerda c/ tam = 6 */
+   /* campos numericos */
+   printf("%d\n", valor);   /* sem alinhamento e tamanho de campo*/
+   printf("%6d\n", valor);  /* alinhado a direita c/ tam = 6 */
+   printf("%-6d\n", valor); /* alinhado a esquerda c/ tam = 6 */
 
-printf("        10        20\n");
-printf("\n12345678901234567890\n");
-printf("%f\n",valor1);	      /* sem alinhamento, tamanho de campo e precisao*/
-printf("%15.2f\n",valor1);    /* alinhado pela direita c/ tam = 15 prec = 2*/
-printf("%-15.2f\n",valor1);   /* alinhado pela esquerda c/tam = 15 prec = 2*/
-printf("%-15f\n",valor1);     /* alinhado pela esquerda c/tam = 15 sem prec*/
-
+   printf("        10        20\n");
+   printf("\n12345678901234567890\n");
+   printf("%f\n", valor1);      /* sem alinhamento, tamanho de campo e precisao*/
+   printf("%15.2f\n", valor1);  /* alinhado pela direita c/ tam = 15 prec = 2*/
+   printf("%-15.2f\n", valor1); /* alinhado pela esquerda c/tam = 15 prec = 2*/
+   printf("%-15f\n", valor1);   /* alinhado pela esquerda c/tam = 15 sem prec*/
 }
 #endif
 
@@ -198,32 +196,31 @@ Exemplo:
 #ifdef ex4
 main()
 {
-char c;
-int d;
-float f;
-float e;
-float g;
+   char c;
+   int d;
+   float f;
+   float e;
+   float g;
 
-printf("digite um caracter: ");
-scanf("%c",&c);
-printf("o caracter digitado e': %c",c);
+   printf("digite um caracter: ");
+   scanf("%c", &c);
+   printf("o caracter digitado e': %c", c);
 
-printf("\n\ndigite um numero inteiro: ");
-scanf("%d",&d);
-printf("o numero digitada e': %d",d);
+   printf("\n\ndigite um numero inteiro: ");
+   scanf("%d", &d);
+   printf("o numero digitada e': %d", d);
 
-printf("\n\ndigite um numero real (123.123): ");
-scanf("%f",&f);
-printf("o numero digitada e': %f",f);
+   printf("\n\ndigite um numero real (123.123): ");
+   scanf("%f", &f);
+   printf("o numero digitada e': %f", f);
 
-printf("\n\ndigite um numero real em notacao cientifica (1234e23): ");
-scanf("%e",&e);
-printf("o numero digitada e': %e",e);
+   printf("\n\ndigite um numero real em notacao cientifica (1234e23): ");
+   scanf("%e", &e);
+   printf("o numero digitada e': %e", e);
 
-printf("\n\ndigite um n. real em notacao cientifica (1234e23)ou normal(123): ");
-scanf("%g",&g);
-printf("o numero digitada e': %g",g);
-
+   printf("\n\ndigite um n. real em notacao cientifica (1234e23)ou normal(123): ");
+   scanf("%g", &g);
+   printf("o numero digitada e': %g", g);
 }
 #endif
 
@@ -273,22 +270,21 @@ Exemplo:
 
 main()
 {
-short int a = 10000;
-long int b = 100000;
+   short int a = 10000;
+   long int b = 100000;
 
-unsigned char c = 65;
-unsigned int d = 45000;
-unsigned short e = 40000;
-unsigned long f = 4000000000;
+   unsigned char c = 65;
+   unsigned int d = 45000;
+   unsigned short e = 40000;
+   unsigned long f = 4000000000;
 
-printf("imprime o conteudo da variavel tipo inteiro com os qualificadores\n");
-printf("\t inteiro curto ------------> %hd\n",a);
-printf("\t inteiro longo ------------> %ld\n",b);
-printf("\t caracter sem sinal -------> %u %c \n",c,c);
-printf("\t inteiro  sem sinal -------> %u\n",d);
-printf("\t inteiro curto sem sinal --> %hu\n",e);
-printf("\t inteiro longo sem sinal --> %lu\n",f);
-
+   printf("imprime o conteudo da variavel tipo inteiro com os qualificadores\n");
+   printf("\t inteiro curto ------------> %hd\n", a);
+   printf("\t inteiro longo ------------> %ld\n", b);
+   printf("\t caracter sem sinal -------> %u %c \n", c, c);
+   printf("\t inteiro  sem sinal -------> %u\n", d);
+   printf("\t inteiro curto sem sinal --> %hu\n", e);
+   printf("\t inteiro longo sem sinal --> %lu\n", f);
 }
 #endif
 /*
@@ -333,29 +329,26 @@ Exemplo:
 #ifdef ex6
 void imprimir(int var);
 
-int fora=10;		/* variavel declarada fora da funcao  */
+int fora = 10; /* variavel declarada fora da funcao  */
 
 main()
 {
-int dentro = 20;    /* variavel declarada dentro da funcao  */
-int var = 30;	    /* variavel que sera' passada como informacao p/a funcao*/
+   int dentro = 20; /* variavel declarada dentro da funcao  */
+   int var = 30;    /* variavel que sera' passada como informacao p/a funcao*/
 
-printf("imprime a variavel fora %d\n",fora);
-printf("imprime a variavel dentro %d\n",dentro);
+   printf("imprime a variavel fora %d\n", fora);
+   printf("imprime a variavel dentro %d\n", dentro);
 
+   imprimir(var); /* variavel passada como informacao para a funcao imprimir */
 
-imprimir(var);	/* variavel passada como informacao para a funcao imprimir */
-
-printf("voce voltou a funcao main\n");
-
+   printf("voce voltou a funcao main\n");
 }
 
 /* funcao imprimir */
-void imprimir(int var1)  /*variavel recebida como informacao na funcao*/
+void imprimir(int var1) /*variavel recebida como informacao na funcao*/
 {
-printf("\t voce esta' na funcao imprimir que coloca no video o conteudo\n");
-printf("\t da variavel var1 recebida como informacao que e' %d\n",var1);
-
+   printf("\t voce esta' na funcao imprimir que coloca no video o conteudo\n");
+   printf("\t da variavel var1 recebida como informacao que e' %d\n", var1);
 }
 #endif
 
@@ -399,21 +392,20 @@ Exemplo:
 */
 
 #ifdef ex7
-int fora = 25000;             /* declaracao de variavel global (fora) */
-static long fora1 = 2000000;  /* declaracao de variavel global (fora) */
+int fora = 25000;            /* declaracao de variavel global (fora) */
+static long fora1 = 2000000; /* declaracao de variavel global (fora) */
 
 main()
 {
-unsigned dentro = 45000;       /* declaracao de variavel local (dentro) */
-static long dentro1 = 4000000; /* declaracao de variavel local (dentro) */
-register int reg = 30000;      /* declaracao de variavel local (dentro) */
+   unsigned dentro = 45000;       /* declaracao de variavel local (dentro) */
+   static long dentro1 = 4000000; /* declaracao de variavel local (dentro) */
+   register int reg = 30000;      /* declaracao de variavel local (dentro) */
 
-printf("imprime o conteudo da variavel fora %d\n",fora);
-printf("imprime o conteudo da variavel static fora %ld\n",fora1);
-printf("imprime o conteudo da variavel dentro %u\n",dentro);
-printf("imprime o conteudo da variavel static dentro %ld\n",dentro1);
-printf("imprime o conteudo da variavel register int reg %d\n",reg);
-
+   printf("imprime o conteudo da variavel fora %d\n", fora);
+   printf("imprime o conteudo da variavel static fora %ld\n", fora1);
+   printf("imprime o conteudo da variavel dentro %u\n", dentro);
+   printf("imprime o conteudo da variavel static dentro %ld\n", dentro1);
+   printf("imprime o conteudo da variavel register int reg %d\n", reg);
 }
 #endif
 /*
@@ -446,14 +438,14 @@ dos programas. Sao eles:
 
 main()
 {
-int z = 20000;
-int y = 25000;
+   int z = 20000;
+   int y = 25000;
 
-printf("imprime o conteudo da variavel z \t %d\n",z);
-printf("imprime o conteudo da variavel y %d \b\b\b",y);
-printf("observe a posicao do cursor na tela\n");
-getchar();
-printf("imprime os caracteres especiais \\ e \'\r");
+   printf("imprime o conteudo da variavel z \t %d\n", z);
+   printf("imprime o conteudo da variavel y %d \b\b\b", y);
+   printf("observe a posicao do cursor na tela\n");
+   getchar();
+   printf("imprime os caracteres especiais \\ e \'\r");
 }
 #endif
 

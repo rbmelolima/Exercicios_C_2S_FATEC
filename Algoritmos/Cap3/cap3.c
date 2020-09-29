@@ -11,6 +11,7 @@ main()
     unsigned char charuns[3];
     float numfloat[3];
     double numdouble[3];
+
     printf("Digite o primeiro numero int: ");
     scanf("%i", &numint[0]);
     printf("Digite o segundo numero int: ");
@@ -83,10 +84,12 @@ main()
                 }
             }
         }
+
         for (i = 0; i < 10; i++)
         {
             printf("\no %d inteiro do vetor e %d ", i + 1, valores[i]);
         }
+
         printf("\nDeseja continuar?(s/n) ");
         getchar();
         tecla = getchar();
@@ -113,6 +116,7 @@ int main()
         {
             isPalindrome = true;
         }
+
         else
         {
             isPalindrome = false;
@@ -172,9 +176,11 @@ main()
     int i, j;
     char tecla;
     int encontrado = 0;
+
     do
     {
         encontrado = 0;
+
         for (i = 0; i < 2; i++)
         {
             for (j = 0; j < 2; j++)
@@ -183,10 +189,13 @@ main()
                 scanf("%f", &matriz[i][j]);
             }
         }
+
         printf("\nDigite o valor que deseja buscar na matriz: ");
         scanf("%f", &x);
+
         i = 0;
         j = 0;
+
         for (i = 0; i < 2; i++)
         {
             for (j = 0; j < 2; j++)
@@ -198,10 +207,12 @@ main()
                 }
             }
         }
+
         if (encontrado == 0)
         {
             printf("\nO valor %f nao foi encontrado na matriz!", x);
         }
+        
         printf("\n\nDeseja continuar?(s/n) ");
         getchar();
         tecla = getchar();

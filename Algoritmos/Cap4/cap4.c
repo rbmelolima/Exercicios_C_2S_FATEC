@@ -11,13 +11,15 @@ main()
     do
     {
         printf("Digite uma string via teclado : ");
-		gets(caracteres);
-		for(i = 0; i < 10; i++){
-			if((int)caracteres[i] >= 97 && (int)caracteres[i] <= 122){
-				caracteres[i] = ((int)caracteres[i])-32;
-			}
-		}
-		printf("A string digitada com seus caracteres maiusculus e \"%s\"", caracteres);
+        gets(caracteres);
+        for (i = 0; i < 10; i++)
+        {
+            if ((int)caracteres[i] >= 97 && (int)caracteres[i] <= 122)
+            {
+                caracteres[i] = ((int)caracteres[i]) - 32;
+            }
+        }
+        printf("A string digitada com seus caracteres maiusculus e \"%s\"", caracteres);
         printf("\nDeseja continuar?(s/n) ");
         tecla = getchar();
         getchar();
@@ -31,16 +33,21 @@ main()
     char caracteres[10];
     char tecla;
     int i;
+
     do
     {
         printf("Digite uma string via teclado : ");
-		gets(caracteres);
-		for(i = 0; i < 10; i++){
-			if((int)caracteres[i] >= 65 && (int)caracteres[i] <= 90){
-				caracteres[i] = ((int)caracteres[i])-32;
-			}
-		}
-		printf("A string digitada com seus caracteres minusculos e \"%s\"", caracteres);
+        gets(caracteres);
+
+        for (i = 0; i < 10; i++)
+        {
+            if ((int)caracteres[i] >= 65 && (int)caracteres[i] <= 90)
+            {
+                caracteres[i] = ((int)caracteres[i]) - 32;
+            }
+        }
+        
+        printf("A string digitada com seus caracteres minusculos e \"%s\"", caracteres);
         printf("\nDeseja continuar?(s/n) ");
         tecla = getchar();
         getchar();
