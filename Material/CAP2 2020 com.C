@@ -47,37 +47,35 @@ Exemplo: */
 #ifdef ex1
 main()
 {
-char ch;
+	char ch;
 
-printf("digite uma letra: ");
-ch=getchar();
-getchar();
+	printf("digite uma letra: ");
+	ch = getchar();
+	getchar();
 
-if(ch == 'r')
-	printf("\nVoce digitou a tecla r");
+	if (ch == 'r')
+		printf("\nVoce digitou a tecla r");
 
-printf("\nVoce nao digitou a tecla r");
-
+	printf("\nVoce nao digitou a tecla r");
 }
 #endif
 
 #ifdef ex2
 main()
 {
-char ch;
+	char ch;
 
-printf("digite uma letra: ");
-ch=getchar();
-getchar();
+	printf("digite uma letra: ");
+	ch = getchar();
+	getchar();
 
-if(ch == 'r')
+	if (ch == 'r')
 	{
-	printf("\nVoce digitou a tecla r");
-	printf("\nparabens voce acertou");
+		printf("\nVoce digitou a tecla r");
+		printf("\nparabens voce acertou");
 	}
 
-printf("\nVoce nao digitou a tecla r");
-
+	printf("\nVoce nao digitou a tecla r");
 }
 #endif
 
@@ -119,22 +117,21 @@ Exemplo: */
 #ifdef ex3
 main()
 {
-char ch;
+	char ch;
 
+	printf("digite uma letra: ");
+	ch = getchar();
+	getchar();
 
-printf("digite uma letra: ");
-ch=getchar();
-getchar();
-
-if(ch == 'r')
+	if (ch == 'r')
 	{
-	printf("\nVoce digitou a tecla r");
-	printf("\nparabens voce acertou");
+		printf("\nVoce digitou a tecla r");
+		printf("\nparabens voce acertou");
 	}
-else
+	else
 	{
-	printf("\nVoce nao digitou a tecla r");
-	printf("\nque azar voce errou");
+		printf("\nVoce nao digitou a tecla r");
+		printf("\nque azar voce errou");
 	}
 }
 #endif
@@ -188,32 +185,31 @@ Exemplo:*/
 #ifdef ex4
 main()
 {
-int opcao;
-int valor;
+	int opcao;
+	int valor;
 
-printf ("Converte um numero de: \n");
-printf ("1: decimal para hexadecimal\n");
-printf ("2: hexadecimal para decimal\n");
-printf ("\nInforme sua opcao: ");
-scanf ("%d", &opcao);
+	printf("Converte um numero de: \n");
+	printf("1: decimal para hexadecimal\n");
+	printf("2: hexadecimal para decimal\n");
+	printf("\nInforme sua opcao: ");
+	scanf("%d", &opcao);
 
-if (opcao == 1)
+	if (opcao == 1)
 	{
-	printf ("\nInforme o valor em decimal: ");
-	scanf ("%d", &valor);
-	printf ("%d em hexadecimal e': %x", valor, valor);
+		printf("\nInforme o valor em decimal: ");
+		scanf("%d", &valor);
+		printf("%d em hexadecimal e': %x", valor, valor);
 	}
-else
-	if (opcao == 2)   /* if aninhado */
-		{
-		printf ("\nInforme o valor em hexadecimal: ");
-		scanf ("%x", &valor);
-		printf ("%x em decimal e': %d", valor, valor);
-		}
-        else
-		{
-		printf ("\nA opcao escolhida e' invalida.");
-		}
+	else if (opcao == 2) /* if aninhado */
+	{
+		printf("\nInforme o valor em hexadecimal: ");
+		scanf("%x", &valor);
+		printf("%x em decimal e': %d", valor, valor);
+	}
+	else
+	{
+		printf("\nA opcao escolhida e' invalida.");
+	}
 }
 #endif
 
@@ -239,34 +235,34 @@ O formato geral e':
 switch (variavel)
 	{
 	case constante_1:
-		declaração_1;
+		declaraï¿½ï¿½o_1;
 		break;
 	case constante_2:
-		declaração_2;
+		declaraï¿½ï¿½o_2;
 		break;
 	.
 	.
 	.
 	case constante_n:
-		declaração_n;
+		declaraï¿½ï¿½o_n;
 		break;
 	default:
-		declaração_default;
+		declaraï¿½ï¿½o_default;
 	}
 
 A declaracao "default" e' opcional e sera executada apenas se a "variavel", que
 esta sendo testada, nao for igual a nenhuma das "constantes".
 
-Há três coisas importantes a saber sobre o comando "switch":
+Hï¿½ trï¿½s coisas importantes a saber sobre o comando "switch":
 
-1) O comando “switch” difere do comando "if” porque “switch” so' pode testar
-"igualdade", enquanto “if” pode avaliar uma "expressao" logica e/ou relacional;
+1) O comando ï¿½switchï¿½ difere do comando "ifï¿½ porque ï¿½switchï¿½ so' pode testar
+"igualdade", enquanto ï¿½ifï¿½ pode avaliar uma "expressao" logica e/ou relacional;
 
-2) Duas constantes “case” no mesmo “switch” não podem ter valores iguais.
-Porem, um comando “switch” incluído em outro comando “switch” mais externo pode
-ter as mesmas "constantes" no “case”.
+2) Duas constantes ï¿½caseï¿½ no mesmo ï¿½switchï¿½ nï¿½o podem ter valores iguais.
+Porem, um comando ï¿½switchï¿½ incluï¿½do em outro comando ï¿½switchï¿½ mais externo pode
+ter as mesmas "constantes" no ï¿½caseï¿½.
 
-3) Se "constantes" do tipo caracter são usadas no comando “swicth”, elas são
+3) Se "constantes" do tipo caracter sï¿½o usadas no comando ï¿½swicthï¿½, elas sï¿½o
 automaticamente convertidas para seus valores inteiros.
 
 Na estrutura do comando "switch" usa-se o comando "break". Vejamos como ele
@@ -274,13 +270,13 @@ funciona.
 
 5 - break
 
-O comando “break” que voce viu logo apos a "declaracao" do “case”, e' chamado
-de comando de "desvio", onde ele realiza um "desvio incondicional". O “case”
-sera' executado ate' que o comando “break” ou o fim do “switch” seja alcançado.
+O comando ï¿½breakï¿½ que voce viu logo apos a "declaracao" do ï¿½caseï¿½, e' chamado
+de comando de "desvio", onde ele realiza um "desvio incondicional". O ï¿½caseï¿½
+sera' executado ate' que o comando ï¿½breakï¿½ ou o fim do ï¿½switchï¿½ seja alcanï¿½ado.
 
-Quando o comando “break” e' alcancado o programa salta para a declaracao
-seguinte ao final do “switch” (o fecha chave "}"). Caso nao tivessemos inserido
-o “break” o programa continuaria testando os demais “cases” e poderia causar um
+Quando o comando ï¿½breakï¿½ e' alcancado o programa salta para a declaracao
+seguinte ao final do ï¿½switchï¿½ (o fecha chave "}"). Caso nao tivessemos inserido
+o ï¿½breakï¿½ o programa continuaria testando os demais ï¿½casesï¿½ e poderia causar um
 erro de logica do programa.
 
 O comando "break" tem uma segunda aplicacao. Ele tambem e' utilizado com os
@@ -291,35 +287,35 @@ Exemplo:*/
 #ifdef ex5
 main()
 {
-int opcao;
-int valor;
+	int opcao;
+	int valor;
 
-printf ("Converte um numero de: \n");
-printf ("1: decimal para hexadecimal\n");
-printf ("2: hexadecimal para decimal\n");
-printf ("\nInforme sua opcao: ");
-scanf ("%d", &opcao);
+	printf("Converte um numero de: \n");
+	printf("1: decimal para hexadecimal\n");
+	printf("2: hexadecimal para decimal\n");
+	printf("\nInforme sua opcao: ");
+	scanf("%d", &opcao);
 
-switch(opcao)
+	switch (opcao)
 	{
-	case 1 :
-		{
-		printf ("\nInforme o valor em decimal: ");
-		scanf ("%d", &valor);
-		printf ("%d em hexadecimal e': %x", valor, valor);
+	case 1:
+	{
+		printf("\nInforme o valor em decimal: ");
+		scanf("%d", &valor);
+		printf("%d em hexadecimal e': %x", valor, valor);
 		break;
-		}
-	case 2 :
-		{
-		printf ("\nInforme o valor em hexadecimal: ");
-		scanf ("%x", &valor);
-		printf ("%x em decimal e': %d", valor, valor);
+	}
+	case 2:
+	{
+		printf("\nInforme o valor em hexadecimal: ");
+		scanf("%x", &valor);
+		printf("%x em decimal e': %d", valor, valor);
 		break;
-		}
-        default:
-		{
-		printf ("\nA opcao escolhida e' invalida.");
-		}
+	}
+	default:
+	{
+		printf("\nA opcao escolhida e' invalida.");
+	}
 	}
 }
 #endif
@@ -332,8 +328,8 @@ classe a parte, a dos comandos de salto incondicional. O comando "goto" realiza
 um salto para um local especificado por um "label" ou "rotulo". O comando "goto"
 deve ser utilizado com parcimonia (cuidado), pois o abuso no seu uso tende a
 tornar o programa confuso. O comando "goto" nao e' um comando de uso comum na
-linguaguem C, pois normalmente ele podendo ser substituído por outras estruturas
-de controle. Porém, em algumas situacoes muito especificas o comando "goto" pode
+linguaguem C, pois normalmente ele podendo ser substituï¿½do por outras estruturas
+de controle. Porï¿½m, em algumas situacoes muito especificas o comando "goto" pode
 tornar o programa mais facil de se entender desde que seja bem empregado.
 
 O formato geral e':
@@ -348,15 +344,14 @@ Exemplo: */
 #ifdef ex6
 main()
 {
-int conta = 1;
+	int conta = 1;
 
-printf("imprime os numeros de 1 a 20\n\n");
+	printf("imprime os numeros de 1 a 20\n\n");
 
 volta:
 	printf(" o numero e': %d \n", conta++);
 	if (conta <= 20)
 		goto volta;
-
 }
 #endif
 
@@ -408,12 +403,12 @@ Exemplo:*/
 #ifdef ex7
 main()
 {
-int i;
+	int i;
 
-for (i = 0; i <= 20; i++)
+	for (i = 0; i <= 20; i++)
 	{
-	printf ("Este e' o valor da variavel de controle i: %d ", i);
-	printf (" e i ao quadrado e': %d\n", i * i);
+		printf("Este e' o valor da variavel de controle i: %d ", i);
+		printf(" e i ao quadrado e': %d\n", i * i);
 	}
 }
 #endif
@@ -444,11 +439,11 @@ Exemplo:*/
 main()
 {
 
-for ( ; ; )
-   {
-   printf ("Este laco sera' executado para sempre.\n");
-   printf("Para interromper este loop inifinito aperte as teclas Ctrl+c\n");
-   }
+	for (;;)
+	{
+		printf("Este laco sera' executado para sempre.\n");
+		printf("Para interromper este loop inifinito aperte as teclas Ctrl+c\n");
+	}
 }
 #endif
 
@@ -463,19 +458,19 @@ Exemplo:*/
 #ifdef ex9
 main()
 {
-char ch;
-int cont = 0;
+	char ch;
+	int cont = 0;
 
-printf("digite a letra certa para sair do loop\n");
-for ( ; ; )
+	printf("digite a letra certa para sair do loop\n");
+	for (;;)
 	{
-	ch = getchar(); //lê um caractere
-	getchar();
-	if (ch == 'k' )
-		break; //sai do laço
-	cont = cont + 1;
+		ch = getchar(); //lï¿½ um caractere
+		getchar();
+		if (ch == 'k')
+			break; //sai do laï¿½o
+		cont = cont + 1;
 	}
-printf ("\nVoce acertou que e'a letra 'k' depois de %d tentativas\n",cont+1);
+	printf("\nVoce acertou que e'a letra 'k' depois de %d tentativas\n", cont + 1);
 }
 #endif
 
@@ -524,24 +519,23 @@ Exemplo:*/
 
 main()
 {
-double x,y;
-double fat;
+	double x, y;
+	double fat;
 
-printf("digite um numero: ");
-scanf("%lf",&x);
-getchar();
+	printf("digite um numero: ");
+	scanf("%lf", &x);
+	getchar();
 
-fat = 1;
-y = 1;
+	fat = 1;
+	y = 1;
 
-while (y < x)
+	while (y < x)
 	{
-	y = y + 1;
-	fat = fat * y;
+		y = y + 1;
+		fat = fat * y;
 	}
 
-printf("O valor da fatorial e' = %g\n",fat);
-
+	printf("O valor da fatorial e' = %g\n", fat);
 }
 #endif
 
@@ -576,31 +570,30 @@ Exemplo:*/
 
 main()
 {
-double y,x;
-double fat;
-char tecla;
+	double y, x;
+	double fat;
+	char tecla;
 
-
-do
+	do
 	{
-	printf("\ndigite um numero: ");
-	scanf("%lf",&x);
-	getchar();
-	fat = 1;
-	y = 1;
+		printf("\ndigite um numero: ");
+		scanf("%lf", &x);
+		getchar();
+		fat = 1;
+		y = 1;
 
-	while (y < x)
+		while (y < x)
 		{
-		y = y + 1;
-		fat = fat * y;
+			y = y + 1;
+			fat = fat * y;
 		}
 
-	printf("O valor da fatorial e' = %g\n",fat);
+		printf("O valor da fatorial e' = %g\n", fat);
 
-	printf("\ndeseja continuar?(s/n) ");
-	tecla = getchar();
-	getchar();
-	}while ((tecla != 'n') && (tecla != 'N'));
+		printf("\ndeseja continuar?(s/n) ");
+		tecla = getchar();
+		getchar();
+	} while ((tecla != 'n') && (tecla != 'N'));
 }
 #endif
 
@@ -628,20 +621,19 @@ Exemplos:*/
 
 main()
 {
-int x,y;
-y=0;
+	int x, y;
+	y = 0;
 
-
-do
+	do
 	{
-	printf("\nTentativa %d \n- digite um numero: ",y+1);
-	scanf("%d",&x);
-	y = y + 1;
-	if (x % 2)
-		continue;
-	printf("\t\to numero %d e' par\n",x);
-	}while(y < 5);
-printf("\n\nfim");
+		printf("\nTentativa %d \n- digite um numero: ", y + 1);
+		scanf("%d", &x);
+		y = y + 1;
+		if (x % 2)
+			continue;
+		printf("\t\to numero %d e' par\n", x);
+	} while (y < 5);
+	printf("\n\nfim");
 }
 #endif
 
@@ -649,17 +641,17 @@ printf("\n\nfim");
 
 main()
 {
-int x,y;
+	int x, y;
 
-for(y = 1;y < 6;y++)
+	for (y = 1; y < 6; y++)
 	{
-	printf("\ntentativa %d \n- digite um numero: ",y);
-	scanf("%d",&x);
-	if (!(x % 2))
-		continue;
-	printf("\t\to numero %d e' impar\n",x);
+		printf("\ntentativa %d \n- digite um numero: ", y);
+		scanf("%d", &x);
+		if (!(x % 2))
+			continue;
+		printf("\t\to numero %d e' impar\n", x);
 	}
-printf("\n\nfim");
+	printf("\n\nfim");
 }
 #endif
 
@@ -668,7 +660,7 @@ printf("\n\nfim");
 			EXERCICIOS
 
 ******************************************************************************
-OBS.: Faça um loop infinito e defina uma saida em todos os exercícios.
+OBS.: Faï¿½a um loop infinito e defina uma saida em todos os exercï¿½cios.
 
 1 - Escreva um programa para adivinhar um numero entre 1 e 99 que o usuario
     pensou. Digite via teclado os simbolos =, > ou < a cada pergunta. Utilize o
@@ -677,8 +669,8 @@ OBS.: Faça um loop infinito e defina uma saida em todos os exercícios.
 2 - Resecreva o programa do execicio anterior agora utilizando o comando switch.
     Conte o n. de tentativas e imprima o resultado no video.
 
-3 - De um modo geral, as ligações telefônicas são cobradas pelas suas durações.
-    O sistema registra os instantes em que a ligação foi iniciada e concluída.
+3 - De um modo geral, as ligaï¿½ï¿½es telefï¿½nicas sï¿½o cobradas pelas suas duraï¿½ï¿½es.
+    O sistema registra os instantes em que a ligaï¿½ï¿½o foi iniciada e concluï¿½da.
     Escreva um programa que recebe via teclado dois instantes dados em 
     horas, minutos e segundo e determina o intervalo de tempo 
     (em horas, minutos e segundos) decorrido entre eles.
@@ -687,7 +679,7 @@ OBS.: Faça um loop infinito e defina uma saida em todos os exercícios.
     Quando o numero digitado for negativo o programa deve parar e calcula a
     media dos valores positivos digitados.
 
-5 - Escreva um programa que realize arredondamentos de números utilizando a
+5 - Escreva um programa que realize arredondamentos de nï¿½meros utilizando a
     seguinte regra:
     - se a parte fracionaria for menor ou igual a 0,24 o n. e' arredonda para 0
     - se a parte fracionaria for maior ou igual a 0,25 e menor ou igual a 0,74 

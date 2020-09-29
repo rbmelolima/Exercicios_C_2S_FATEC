@@ -104,24 +104,23 @@ Exemplo:*/
 
 void imprimir_mensagem()
 {
-printf("\t\t Voce esta' na funcao imprimir_mensagem\n");
-printf("\t\t esta funcao foi chamada pela funcao main()\n");
-printf("\t\t fim da funcao imprimir_mensagem\n\n");
+    printf("\t\t Voce esta' na funcao imprimir_mensagem\n");
+    printf("\t\t esta funcao foi chamada pela funcao main()\n");
+    printf("\t\t fim da funcao imprimir_mensagem\n\n");
 }
 
 main()
 {
 
+    printf("\nVoce esta' na funcao main()\n");
+    printf("Este exemplo mostra a chamada de uma funcao.\n\n");
 
-printf("\nVoce esta' na funcao main()\n");
-printf("Este exemplo mostra a chamada de uma funcao.\n\n");
-
-imprimir_mensagem(); /*chama a funcao"imprimir_mensagem" desenvolvida pelo
+    imprimir_mensagem(); /*chama a funcao"imprimir_mensagem" desenvolvida pelo
                        programador e sem a passagem de informacoes para a funcao
                        chamada */
 
-printf("Voce esta' de volta a funcao main()\n");
-printf("Fim do programa\n");
+    printf("Voce esta' de volta a funcao main()\n");
+    printf("Fim do programa\n");
 }
 
 #endif
@@ -138,7 +137,7 @@ Existem dois metodos de passagem de parametros ou informacoes para uma funcao.
 
 - O 1. metodo e' a passagem de parametros ou informacoes por "valor" ou "copia".
 
-Neste metodo, na função que chamou faz-se uma copia dos valores a serem
+Neste metodo, na funï¿½ï¿½o que chamou faz-se uma copia dos valores a serem
 enviados para a funcao chamada. Dessa forma os valores originais nao podem ser
 alterados, pois a funcao chamada manipula apenas as copias dos mesmos. Na funcao
 chamada sao criadas variaveis do mesmo tipo da funcao que chamou que receberao
@@ -152,63 +151,62 @@ seu conteudo e' perdido.
 Exemplo:*/
 
 #ifdef ex2
-void soma(int i,int j);
-void troca(int x,int y);
+void soma(int i, int j);
+void troca(int x, int y);
 
-main()		/* passagem de parametros por "valor" ou "copia" */
+main() /* passagem de parametros por "valor" ou "copia" */
 {
-int a,b;
-a = 10;
-b = 20;
+    int a, b;
+    a = 10;
+    b = 20;
 
+    printf("main() -> antes da troca ---> a = %d  b = %d \n\n", a, b);
 
-printf("main() -> antes da troca ---> a = %d  b = %d \n\n",a,b);
-
-troca(a,b); /* chama a funcao "troca" passando como informacao a copia dos
+    troca(a, b); /* chama a funcao "troca" passando como informacao a copia dos
                valores das variaveis "a" e "b" */
 
-printf("main() -> depois da troca --> a = %d  b = %d \n\n",a,b);
+    printf("main() -> depois da troca --> a = %d  b = %d \n\n", a, b);
 
-soma(a,b);  /* chama a funcao "soma" passando como informacao a copia dos
+    soma(a, b); /* chama a funcao "soma" passando como informacao a copia dos
                valores das variaveis "a" e "b" */
 
-printf("Voce esta' de volta a funcao main()\n");
-printf("Fim do programa\n");
+    printf("Voce esta' de volta a funcao main()\n");
+    printf("Fim do programa\n");
 }
 
 /* funcao troca dois valores */
 
-void troca(int x,int y)    /* recebe a copias dos valores das variaveis "a" e "b" 
+void troca(int x, int y) /* recebe a copias dos valores das variaveis "a" e "b" 
                            da funcao main */
 {
-int c;
+    int c;
 
-printf("\tfuncao troca()\n");
-printf("\ttroca os valores da variaveis x e y que sao\n");
-printf("\tcopias das variaveis a e b da funcao main().\n\n");
+    printf("\tfuncao troca()\n");
+    printf("\ttroca os valores da variaveis x e y que sao\n");
+    printf("\tcopias das variaveis a e b da funcao main().\n\n");
 
-printf("\to valor de x e' %d, o de y e' %d\n",x,y);
+    printf("\to valor de x e' %d, o de y e' %d\n", x, y);
 
-c = x;
-x = y;
-y = c;
+    c = x;
+    x = y;
+    y = c;
 
-printf("\to valor de x e' %d, o de y e' %d\n",x,y);
-printf("\tfim da funcao troca\n\n");
+    printf("\to valor de x e' %d, o de y e' %d\n", x, y);
+    printf("\tfim da funcao troca\n\n");
 }
 
 /* funcao soma dois valores */
 
-void soma(int i,int j)
+void soma(int i, int j)
 {
-int k;
+    int k;
 
-k = i + j;
+    k = i + j;
 
-printf("\tfuncao soma()\n");
+    printf("\tfuncao soma()\n");
 
-printf("\to valor de i e' %d, o de j e' %d e a soma de i + j e'%d\n",i,j,k);
-printf("\tfim da funcao soma\n\n");
+    printf("\to valor de i e' %d, o de j e' %d e a soma de i + j e'%d\n", i, j, k);
+    printf("\tfim da funcao soma\n\n");
 }
 #endif
 
@@ -235,38 +233,37 @@ IMPORTANTE: O comando "return" retorna uma unica informacao.
 Exemplo: */
 
 #ifdef ex6
-int soma(int x,int y);
+int soma(int x, int y);
 
 main()
 {
-int a,b,c;
-a = 100;
-b = 200;
+    int a, b, c;
+    a = 100;
+    b = 200;
 
+    printf("chama a funcao soma(). \n");
+    printf("A funcao soma() retorna o resultado que e' atribuido a variavel c\n\n");
 
-printf("chama a funcao soma(). \n");
-printf("A funcao soma() retorna o resultado que e' atribuido a variavel c\n\n");
-
-c = soma(a,b); /* chama a funcao "soma" e passa como informacao uma copia dos
+    c = soma(a, b); /* chama a funcao "soma" e passa como informacao uma copia dos
                   valores de "a" e "b" */
 
-printf("soma de a + b e': %d + %d = %d \n",a,b,c);
+    printf("soma de a + b e': %d + %d = %d \n", a, b, c);
 }
 
 /* funcao "soma" que recebe 2 valores por passagem de informacoes por "valor"
 ou "copia", soma estes valores e retorna o resultado */
 
-int soma(int x,int y)
+int soma(int x, int y)
 {
-int z;
+    int z;
 
-printf("\tfuncao soma() \n");
-printf("\ta funcao soma os valores x e y \n");
-printf("\tretorna o resultado com o comando return\n\n");
+    printf("\tfuncao soma() \n");
+    printf("\ta funcao soma os valores x e y \n");
+    printf("\tretorna o resultado com o comando return\n\n");
 
-z = x + y;
+    z = x + y;
 
-return(z); /* retorna o resultado da soma dos valores recebidos */
+    return (z); /* retorna o resultado da soma dos valores recebidos */
 }
 #endif
 
@@ -285,12 +282,12 @@ tipo na funcao de chamada.
 O formato geral para chamar uma funcao que retorna uma valor diferente de
 inteiro e':
 
-	<nome_da_função> (parametros ou informacoes);
+	<nome_da_funï¿½ï¿½o> (parametros ou informacoes);
 
 Deve-se tambem declarar o tipo da informacao retornada na funcao que chamou
 junto com as variaveis locais desta.
 
-O formato geral é:
+O formato geral ï¿½:
 	<tipo> <nome_da_funcao>();
 
 Exemplo:
@@ -318,44 +315,43 @@ Exemplo:
 Exemplo:*/
 
 #ifdef ex7
-float soma(float x,float y);
+float soma(float x, float y);
 
 main()
 {
-float a,b,c;
-//float soma(); /* declara que a funcao "soma" retornara' um valor do tipo float*/
+    float a, b, c;
+    //float soma(); /* declara que a funcao "soma" retornara' um valor do tipo float*/
 
-a = 3957.779;
-b = 43558.357;
+    a = 3957.779;
+    b = 43558.357;
 
+    printf("chama a funcao soma(). \n");
+    printf("A funcao soma() retorna o resultado que e' atribuido a variavel c\n\n");
 
-printf("chama a funcao soma(). \n");
-printf("A funcao soma() retorna o resultado que e' atribuido a variavel c\n\n");
-
-c = soma(a,b);   /* chama a funcao "soma" e passa como informacao uma copia dos
+    c = soma(a, b); /* chama a funcao "soma" e passa como informacao uma copia dos
                     valores de "a" e "b" e espera o retorno de um valor do
                     tipo "float" */
 
-printf("soma de a + b e': %.3f + %.3f = %.3f \n",a,b,c);
+    printf("soma de a + b e': %.3f + %.3f = %.3f \n", a, b, c);
 }
 
 /* funcao "soma" que recebe 2 valores por passagem de informacoes por "valor",
 soma estes valores e retorna o resultado como "float" pois o "tipo_de_retorno"
 desta funcao esta declarado como "float" */
 
-float soma(float x,float y) /* na frente do <nome_da_funcao> esta' declarado o
+float soma(float x, float y) /* na frente do <nome_da_funcao> esta' declarado o
                    <tipo_de_retorno> ou o tipo de valor que o comando "return"
                    vai retornar */
 {
-float z;
+    float z;
 
-printf("\tfuncao soma() \n");
-printf("\ta funcao soma os valores x e y \n");
-printf("\tretorna o resultado com o comando return\n\n");
+    printf("\tfuncao soma() \n");
+    printf("\ta funcao soma os valores x e y \n");
+    printf("\tretorna o resultado com o comando return\n\n");
 
-z = x + y;
+    z = x + y;
 
-return(z); /* retorna o resultado da soma dos valores de guardados em "z" neste
+    return (z); /* retorna o resultado da soma dos valores de guardados em "z" neste
               caso "float" */
 }
 #endif

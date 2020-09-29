@@ -78,7 +78,6 @@ main()
             }
         }
         printf("A string digitada com seus caracteres maiusculus e \"%s\"", caracteres);
-
         printf("\nDeseja continuar?(s/n) ");
         tecla = getchar();
         getchar();
@@ -92,6 +91,7 @@ main()
     char caracteres[10];
     char tecla;
     int i;
+
     do
     {
         printf("Digite uma string via teclado : ");
