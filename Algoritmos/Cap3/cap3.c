@@ -3,7 +3,7 @@
 
 #define ex1
 
-#ifdef ex1
+#ifdef ex1 // Precisa do loop
 main()
 {
     int numint[3];
@@ -97,7 +97,7 @@ main()
 }
 #endif // ex2
 
-#ifdef ex3
+#ifdef ex3 // Precisa do loop
 int main()
 {
     int lengthComponents = 10;
@@ -136,7 +136,7 @@ int main()
 }
 #endif //ex3
 
-#ifdef ex4
+#ifdef ex4 // Precisa do loop
 int main()
 {
     int rows = 2;

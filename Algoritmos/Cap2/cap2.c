@@ -140,7 +140,7 @@ int convertHoursInSeconds(int hour, int minute, int second)
 }
 #endif
 
-#ifdef ex4
+#ifdef ex4 // Precisa do loop
 main()
 {
     int num;
