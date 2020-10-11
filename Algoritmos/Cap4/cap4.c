@@ -112,7 +112,6 @@ main()
 #endif
 
 #ifdef ex5
-
 int main()
 {
     char word1[10];

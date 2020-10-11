@@ -12,6 +12,7 @@ void main()
   int running = 1;
   int retorno;
   char l;
+
   while(running == 1){
     printf("Digite uma letra para pesquisa-la no vetor: ");
     scanf(" %c", &l);
@@ -22,6 +23,7 @@ void main()
     else{
       printf("\nEsta letra esta na posicao %d do vetor!", retorno);
     }
+    
     printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
     scanf("%d", &running);
     system("cls");
