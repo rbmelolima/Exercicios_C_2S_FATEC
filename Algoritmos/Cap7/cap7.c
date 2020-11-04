@@ -33,7 +33,6 @@ void main()
 
 #ifdef ex3
     struct ponto{
-        float D;
         float X;
         float Y;
     };
@@ -47,6 +46,7 @@ void main()
     void main()
     {
         int running = 1;
+        double distancia;
         struct ponto pont;
         while(running == 1){
             printf("Digite a coordenada X do ponto: \n");
@@ -55,8 +55,8 @@ void main()
             printf("Digite a coordenada Y do ponto: \n");
             scanf("%f",&pont.Y);
             system("cls");
-            pont.D = calculaDistancia(pont);
-            printf("\nA distancia do ponto (%f, %f) ate a origem e %f \n", pont.X, pont.Y, pont.D );
+            distancia = calculaDistancia(pont);
+            printf("\nA distancia do ponto (%f, %f) ate a origem e %f \n", pont.X, pont.Y, distancia );
             printf("\n\nDeseja continuar? (1) Sim (0) Nao: ");
             scanf("%d", &running);
             system("cls");
