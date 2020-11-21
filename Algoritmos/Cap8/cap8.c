@@ -94,6 +94,31 @@ void main()
   int running = 1;
   
   while(running == 1){
+    char string1[10];
+    char string2[10];
+    char *p1;
+    char *p2;
+    int i;
+
+    printf("Digite a 1 string: ");
+    scanf("%s", string1);
+
+    printf("Digite a 2 string: ");
+    scanf("%s", string2);
+
+    p1 = string1;
+    p2 = string2;
+
+    for(i = 0; i < 9; i++){
+        if((int)p1[i] == 0 && (int)p2[i] == 0){
+    		break;
+		}
+        if(p1[i] != p2[i]){
+            printf("As strings sao diferentes!");
+            return 0;
+        }
+    };
+    printf("As strings sao iguais!");
     printf("\n\nDeseja continuar? (1) Sim (0) Nao: ");
     scanf("%d", &running);
     system("cls");
