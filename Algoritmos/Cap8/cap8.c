@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ex2
+#define ex3
 
 #ifdef ex1
 struct data
@@ -125,9 +125,34 @@ void main()
 void main()
 {
   int running = 1;
+  char alphabet[13] = {'b', 'd', 'f', 'h', 'j', 'l', 'm', 'o', 'q', 's', 'u', 'w', 'y'};
+
+  char letter;
+  char *p_letter = &letter;
 
   while (running == 1)
   {
+    int isEqual = 0;
+
+    printf("\n\nDigite uma letra: ");
+    scanf("%s", p_letter);
+
+    for (int i = 0; i < 13; i++)
+    {
+      if (*p_letter == alphabet[i])
+      {
+        printf("IGUALDADE");
+        isEqual = 1;
+        break;
+      }
+    }
+
+    
+    if(isEqual == 0)
+    {
+      printf("DESIGUALDADE");
+    }
+
     printf("\n\nDeseja continuar? (1) Sim (0) Nao: ");
     scanf("%d", &running);
     system("cls");
