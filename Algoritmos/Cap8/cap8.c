@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ex3
+#define ex5
 
 #ifdef ex1
 struct data
@@ -147,8 +147,7 @@ void main()
       }
     }
 
-    
-    if(isEqual == 0)
+    if (isEqual == 0)
     {
       printf("DESIGUALDADE");
     }
@@ -209,6 +208,23 @@ void main()
 
   while (running == 1)
   {
+    int sum = 0, count = 0, number = 0;
+    int *p_number = &number;
+    float media = 0;
+
+    while (p_number >= 0)
+    {
+      printf("Digite um numero positivo: ");
+      scanf("%d", p_number);
+
+      sum += *p_number;
+      count++;
+    }
+
+    media = sum / count;
+
+    printf("Media: %.2f", media);
+
     printf("\n\nDeseja continuar? (1) Sim (0) Nao: ");
     scanf("%d", &running);
     system("cls");
