@@ -234,15 +234,15 @@ void main()
 
 #ifdef ex6
 
-typedef struct
+struct Date
 {
   int day;
   int month;
   int year;
-} Date;
+} ;
 
 int bissexto(int ano);
-unsigned long difference(Date inicio, Date fim);
+unsigned long difference(struct Date *inicio, struct Date *fim);
 
 int daysInMonth[2][13] = {{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
                        {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};
@@ -253,7 +253,7 @@ void main()
 
   while (running == 1)
   {
-    Date date1, date2;
+    struct Date date1, date2;
 
     printf("Data inicial (dd/mm/aa): ");
     scanf("%d/%d/%d", &date1.day, &date1.month, &date1.year);
@@ -261,7 +261,7 @@ void main()
     printf("Data final (dd/mm/aa): ");
     scanf("%d/%d/%d", &date2.day, &date2.month, &date2.year);
 
-    printf("\nDiferença de dias: %lu\n", difference(date1, date2));
+    printf("\nDiferença de dias: %lu\n", difference(&date1, &date2));
 
     printf("\n\nDeseja continuar? (1) Sim (0) Nao: ");
     scanf("%d", &running);
@@ -275,7 +275,7 @@ int leapYear(int year)
   return (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
 }
 
-unsigned long difference(Date start, Date end)
+unsigned long difference(struct Date *start, struct Date *end)
 {
   unsigned long IDays, FDays;
   unsigned long diff = 0;
@@ -283,25 +283,25 @@ unsigned long difference(Date start, Date end)
   register int i;
   int dayLeap;
 
-  IDays = start.day;
-  dayLeap = leapYear(start.year);
+  IDays = start->day;
+  dayLeap = leapYear(start->year);
 
-  for (i = start.month - 1; i > 0; --i)
+  for (i = start->month - 1; i > 0; --i)
   {
     IDays += daysInMonth[dayLeap][i];
   }
 
-  FDays = end.day;
-  dayLeap = leapYear(end.year);
+  FDays = end->day;
+  dayLeap = leapYear(end->year);
 
-  for (i = end.month - 1; i > 0; --i)
+  for (i = end->month - 1; i > 0; --i)
   {
     FDays += daysInMonth[dayLeap][i];
   }
 
-  while (start.year < end.year)
+  while (start->year < end->year)
   {
-    diff += 365 + leapYear(start.year++);
+    diff += 365 + leapYear(start->year++);
   }
 
   return diff - IDays + FDays;
