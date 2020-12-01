@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ex1
+#define ex3
 
 #ifdef ex1
 struct data {
@@ -71,12 +71,68 @@ void main()
 #endif
 
 #ifdef ex2
+
+void soma(float *n, float *nA){
+    *n = *n + *nA;
+}
+
+void subtracao(float *n, float *nA){
+    *n = *n - *nA;
+}
+
+void multiplicacao(float *n, float *nA){
+    *n = *n * *nA;
+}
+
+void divisao(float *n, float *nA){
+    *n = *n / *nA;
+}
+
+void numeros(float *n, float *nA, char *o){
+    if(*n != 0){
+        if(*o == '+'){
+            soma(n, nA);
+        }
+        else if(*o == '-'){
+            subtracao(n, nA);
+        }
+        else if(*o == '*'){
+            multiplicacao(n, nA);
+        }
+        else if(*o == '/'){
+            divisao(n, nA);
+        }
+    }
+    else{
+        *n = *nA;
+    }
+}
+
 void main()
 {
-  int running = 1;
+  int running = 1, cont = 0;
+  char operacao = "+";
+  float numero = 0, numeroAtual;
+
 
   while (running == 1)
   {
+    do{
+      if(cont == 0 || cont == 2){
+        printf("Digite um numero: ");
+        scanf("%f", &numeroAtual);
+        numeros(&numero, &numeroAtual, &operacao);
+        cont = 1;
+      }
+      else{
+        printf("Digite uma operacao (+, -, *, / ou =): ");
+        getchar();
+        operacao = getchar();
+        cont = 2;
+      }
+    }while(operacao != '=');
+    system("cls");
+    printf("\nResultado final: %-2f", numero);
     
     printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
     scanf("%d", &running);
@@ -86,13 +142,40 @@ void main()
 #endif
 
 #ifdef ex3
-void main()
-{
+int find(char *listLetters, char* letter) {
+	int i;
+	for (i = 0; listLetters[i] != '\0' && i < 14; i++) {
+		
+		if (listLetters[i] == *letter) {
+		  	return i;
+		}
+	}
+	return -1;
+}
+
+void main() {
   int running = 1;
 
-  while (running == 1)
-  {
+  char listLetters[] = {"bdfhjkmoqsuwv"};
+  char letter;
+
+  while (running == 1) {
+    printf("Digite uma letra: ");
     
+	letter = getchar();
+	if(letter == '\n'){
+		letter = getchar();
+	}
+
+	int posicao = find(&listLetters, &letter);
+    if (posicao != -1) {
+      printf("\nA letra foi encontrada na posicao %i!\n", posicao);
+    }
+
+    else {
+      printf("\nA letra nao foi encontrada!\n");
+    }
+
     printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
     scanf("%d", &running);
     system("cls");
