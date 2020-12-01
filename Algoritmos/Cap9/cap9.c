@@ -167,15 +167,75 @@ void main() {
 #endif
 
 #ifdef ex4
-void main() {
-  int running = 1;
+int compare(char *p1, char *p2);
 
-  while (running == 1) {
+main()
+{
+    int running = 1;
+    char string1[11];
+    char string2[11];
+    char *p1;
+    char *p2;
+	
+    while (running == 1) {
+	    printf("Digite a 1 string: ");
+	    scanf("%s", string1);
 
-    printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
-    scanf("%d", &running);
-    system("cls");
-  }
+	    printf("Digite a 2 string: ");
+	    scanf("%s", string2);
+
+	    p1 = string1;
+	    p2 = string2;
+
+	    switch(compare(p1, p2)){
+		case 1:
+		    printf("1. As strings sao iguais\n");
+		break;
+		case 2:
+		    printf("2. A string 1 e maior que a string 2\n");
+		break;
+		case 3:
+		    printf("3. A string 2 e maior que a string 1\n");
+		break;
+		case 4:
+		    printf("4. As strings tem o mesmo tamanho, mas sao diferentes\n");
+		break;
+	    }
+
+	    printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
+	    scanf("%d", &running);
+	    system("cls");
+    }
+}
+
+int compare(char *p1, char *p2){
+    int i;
+    int result = 1;
+    int size = 0;
+
+    for(i = 0; i < 10; i++){
+        if(p1[i] != p2[i]){
+            result = 0;
+        };
+        if(p1[i] == '\0' && p2[i] == '\0'){
+    		size = 4;
+    		break;
+		}
+		if(p1[i] == '\0' && p2[i] != '\0'){
+    		size = 3;
+    		break;
+		}
+		if(p1[i] != '\0' && p2[i] == '\0'){
+    		size = 2;
+    		break;
+		}
+    }
+    if(result == 1){
+        return 1;
+    }
+    else{
+        return size;
+    }
 }
 #endif
 
