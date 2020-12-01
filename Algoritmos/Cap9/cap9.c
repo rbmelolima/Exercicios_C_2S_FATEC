@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ex4
+#define ex6
 
 #ifdef ex1
 struct data {
@@ -244,27 +244,296 @@ void main() {
 #endif
 
 #ifdef ex5
-void main() {
-  int running = 1;
+struct pessoa {
+  char nome[21];
+  char end[51];
+  char cidade[51];
+  char estado[51];
+  char cep[10];
+};
 
-  while (running == 1) {
-
-    printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
-    scanf("%d", &running);
+void insert(struct pessoa *p){
+  int i;
+  for (i = 0; i < 4; i++)
+  {
     system("cls");
+    
+    printf("\nDigite o nome da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].nome);
+
+    printf("\nDigite o endereco da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].end);
+
+    printf("\nDigite a cidade da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].cidade);
+
+    printf("\nDigite o estado da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].estado);
+
+    printf("\nDigite o cep da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].cep);
+  }
+}
+
+void list(struct pessoa *p){
+	
+    int i;
+  	for (i = 0; i < 4; i++)
+  	{
+		if(p->nome[i] != NULL){
+	    printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p[i].nome, p[i].end, p[i].cidade, p[i].estado, p[i].cep);
+		}
+	}
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+    getch();
+}
+
+void main() {
+  int menu;
+  struct pessoa pessoas [4];
+
+  while(1){
+    system("cls");
+
+    printf("\n(1) Inserir dados");
+    printf("\n(2) Listar dados");
+    printf("\n(3) Sair");
+    printf("\n\n-> Digite sua acao: ");
+
+    scanf("%i", &menu);
+    getchar();
+
+    switch (menu)
+    {
+      case 1:
+        insert(pessoas);
+      break;
+      case 2:
+        list(pessoas);
+      break;
+      default:
+        exit(0);
+      break;
+    }
   }
 }
 #endif
 
 #ifdef ex6
-void main() {
-  int running = 1;
+struct pessoa {
+  char nome[21];
+  char end[51];
+  char cidade[51];
+  char estado[51];
+  char cep[10];
+};
 
-  while (running == 1) {
-
-    printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
-    scanf("%d", &running);
+void insert(struct pessoa *p){
+  int i;
+  for (i = 0; i < 4; i++)
+  {
     system("cls");
+    
+    printf("\nDigite o nome da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].nome);
+
+    printf("\nDigite o endereco da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].end);
+
+    printf("\nDigite a cidade da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].cidade);
+
+    printf("\nDigite o estado da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].estado);
+
+    printf("\nDigite o cep da %i pessoa: ", (i+1));
+    scanf("%s", &p[i].cep);
+  }
+}
+
+void list(struct pessoa *p){
+	
+  int i;
+  for (i = 0; i < 4; i++)
+  {
+		if(p->nome[i] != NULL){
+      printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p[i].nome, p[i].end, p[i].cidade, p[i].estado, p[i].cep);
+		}
+	}
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void search(struct pessoa *p){
+
+  char nameText[21];
+
+  printf("\n\nPesquisar nome: ");
+  gets(nameText);
+
+  int finded = 0;
+  int j;
+  int i;
+  int achados = 0;
+  for (i = 0; i < 4; i++)
+  {
+    if(p->nome != NULL){
+      for(j = 0; j < 21 && (nameText[j] != '\0' || p[i].nome[j] != '\0'); j++) {
+        if (nameText[j] == p[i].nome[j]){
+          finded++;
+        }
+        else{
+          finded = 0;
+          break;
+        }
+      }
+      if(finded != 0){
+        achados++;
+        printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p[i].nome, p[i].end, p[i].cidade, p[i].estado, p[i].cep);
+      }
+		}
+  }
+  if (achados == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void update(struct pessoa *p){
+
+  char nameText[21];
+
+  printf("\n\nPesquisar nome: ");
+  gets(nameText);
+
+  int finded = 0;
+  int j;
+  int i;
+  int achados = 0;
+  for (i = 0; i < 4; i++)
+  {
+    if(p->nome != NULL){
+      for(j = 0; j < 21 && (nameText[j] != '\0' || p[i].nome[j] != '\0'); j++) {
+        if (nameText[j] == p[i].nome[j]){
+          finded++;
+        }
+        else{
+          finded = 0;
+          break;
+        }
+      }
+      if(finded != 0){
+        achados++;
+        printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p[i].nome, p[i].end, p[i].cidade, p[i].estado, p[i].cep);
+
+        printf("\nDigite o novo nome: ");
+        scanf("%s", &p[i].nome);
+
+        printf("\nDigite o novo endereco: ");
+        scanf("%s", &p[i].end);
+
+        printf("\nDigite a nova cidade: ");
+        scanf("%s", &p[i].cidade);
+
+        printf("\nDigite o novo estado: ");
+        scanf("%s", &p[i].estado);
+
+        printf("\nDigite o novo cep: ");
+        scanf("%s", &p[i].cep);
+        break;
+      }
+		}
+  }
+  if (achados == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void delete(struct pessoa *p){
+
+  char nameText[21];
+
+  printf("\n\nPesquisar nome: ");
+  gets(nameText);
+
+  int finded = 0;
+  int j;
+  int i;
+  int achados = 0;
+  for (i = 0; i < 4; i++)
+  {
+    if(p->nome != NULL){
+      for(j = 0; j < 21 && (nameText[j] != '\0' || p[i].nome[j] != '\0'); j++) {
+        if (nameText[j] == p[i].nome[j]){
+          finded++;
+        }
+        else{
+          finded = 0;
+          break;
+        }
+      }
+      if(finded != 0){
+        achados++;
+        printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p[i].nome, p[i].end, p[i].cidade, p[i].estado, p[i].cep);
+        printf("Registro deletado!");
+        p[i].nome[0] = '\0';
+        p[i].end[0] = '\0';
+        p[i].cidade[0] = '\0';
+        p[i].estado[0] = '\0';
+        p[i].cep[0] = '\0';
+        break;
+      }
+		}
+  }
+  if (achados == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void main() {
+  int menu;
+  struct pessoa pessoas [4];
+
+  while(1){
+    system("cls");
+
+    printf("\n(1) Inserir dados");
+    printf("\n(2) Listar dados");
+    printf("\n(3) Procurar dados pelo nome");
+    printf("\n(4) Atualizar dados pelo nome");
+    printf("\n(5) Excluir dados pelo nome");
+    printf("\n(6) Sair");
+    printf("\n\n-> Digite sua acao: ");
+
+    scanf("%i", &menu);
+    getchar();
+
+    switch (menu)
+    {
+      case 1:
+        insert(pessoas);
+      break;
+      case 2:
+        list(pessoas);
+      break;
+      case 3:
+        search(pessoas);
+      break;
+      case 4:
+        update(pessoas);
+      break;
+      case 5:
+        delete(pessoas);
+      break;
+      default:
+        exit(0);
+      break;
+    }
   }
 }
 #endif
