@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ex3
+#define ex4
 
 #ifdef ex1
 struct data {
@@ -161,10 +161,74 @@ void main() {
 #endif
 
 #ifdef ex4
+int analysis(char* string1, char* string2) {
+  int status = 0;
+
+  for (int i = 0; string1[i] != '\0' || string2[i] != '\0'; i++) {
+    if (string1[i] != string2[i]) {
+      status = 4;
+
+      if (string1[i] == '\0' && string2 != '\0') {
+        status = 3;
+        break;
+      }
+
+      else if (string1[i] != '\0' && string2 == '\0') {
+        status = 2;
+        break;
+      }
+    }
+
+    else {
+      status = 1;
+    }
+  }
+
+  return status;
+}
+
+void displayMessage(int status) {
+  switch (status) {
+    case 1:
+      printf("** As strings sao iguais\n");
+      break;
+    case 2:
+      printf("** A primeira string e maior que a segunda\n");
+      break;
+    case 3:
+      printf("** A segunda string e maior que a primeira\n");
+      break;
+    case 4:
+      printf("** As strings sao diferentes, porem tem o mesmo tamanho\n");
+      break;
+  }
+}
+
+void clean(char *pointer, int length) {
+  for(int i = 0; i < length; i++) {
+    pointer[i] = "";
+  }
+}
+
 void main() {
   int running = 1;
 
   while (running == 1) {
+
+    char string1[20];
+    char string2[20];
+
+    clean(string1, 20);
+    clean(string2, 20);
+
+    printf("Primeira string: ");
+    scanf("%s", &string1);
+
+    printf("Segunda string: ");
+    scanf("%s", &string2);
+
+    int status = analysis(&string1[0], &string2[0]);
+    displayMessage(status);
 
     printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
     scanf("%d", &running);
