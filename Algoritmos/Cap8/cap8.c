@@ -251,15 +251,20 @@ void main()
 {
   int running = 1;
 
+  struct Date date1, date2;
+  struct Date *pDate1, *pDate2;
+
+  pDate1 = &date1;
+  pDate2 = &date2;
+
   while (running == 1)
-  {
-    struct Date date1, date2;
+  {   
 
     printf("Data inicial (dd/mm/aa): ");
-    scanf("%d/%d/%d", &date1.day, &date1.month, &date1.year);
+    scanf("%d/%d/%d", &pDate1 -> day, &pDate1 -> month, &pDate1 -> year);
 
     printf("Data final (dd/mm/aa): ");
-    scanf("%d/%d/%d", &date2.day, &date2.month, &date2.year);
+    scanf("%d/%d/%d", &pDate2 -> day, &pDate2 -> month, &pDate2 -> year);
 
     printf("\nDiferença de dias: %lu\n", difference(&date1, &date2));
 
