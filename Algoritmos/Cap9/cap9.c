@@ -125,28 +125,34 @@ void main() {
 #endif
 
 #ifdef ex3
-
-int find(char* listLetters, char* letter) {
-  for (int i = 0; listLetters[i] != '\0' && i < 14; i++) {
-    if (listLetters[i] == *letter) {
-      return 1;
-    }
-  }
-  return 0;
+int find(char *listLetters, char* letter) {
+	int i;
+	for (i = 0; listLetters[i] != '\0' && i < 14; i++) {
+		
+		if (listLetters[i] == *letter) {
+		  	return i;
+		}
+	}
+	return -1;
 }
 
 void main() {
   int running = 1;
 
-  char listLetters[] = "bdfhjkmoqsuwv";
+  char listLetters[] = {"bdfhjkmoqsuwv"};
   char letter;
 
   while (running == 1) {
     printf("Digite uma letra: ");
-    letter = getchar();
+    
+	letter = getchar();
+	if(letter == '\n'){
+		letter = getchar();
+	}
 
-    if (find(&listLetters[0], &letter)) {
-      printf("\nA letra foi encontrada!\n");
+	int posicao = find(&listLetters, &letter);
+    if (posicao != -1) {
+      printf("\nA letra foi encontrada na posicao %i!\n", posicao);
     }
 
     else {
