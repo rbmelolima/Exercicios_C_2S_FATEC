@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ex2
+#define ex3
 
 #ifdef ex1
 struct data {
@@ -125,10 +125,33 @@ void main() {
 #endif
 
 #ifdef ex3
+
+int find(char* listLetters, char* letter) {
+  for (int i = 0; listLetters[i] != '\0' && i < 14; i++) {
+    if (listLetters[i] == *letter) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
 void main() {
   int running = 1;
 
+  char listLetters[] = "bdfhjkmoqsuwv";
+  char letter;
+
   while (running == 1) {
+    printf("Digite uma letra: ");
+    letter = getchar();
+
+    if (find(&listLetters[0], &letter)) {
+      printf("\nA letra foi encontrada!\n");
+    }
+
+    else {
+      printf("\nA letra nao foi encontrada!\n");
+    }
 
     printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
     scanf("%d", &running);
