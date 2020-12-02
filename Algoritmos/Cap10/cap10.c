@@ -475,15 +475,259 @@ void main()
 #endif
 
 #ifdef ex4
-void main()
-{
-  int running = 1;
+struct pessoa {
+  char nome[21];
+  char end[51];
+  char cidade[51];
+  char estado[51];
+  char cep[10];
+};
+
+char filename[] = "pessoas.txt";
+
+void insert(struct pessoa *p){
+  FILE* pFile;
+  pFile = fopen(filename, "a");
+  printf("\nDigite o nome da pessoa: ");
+  scanf("%s", &p->nome);
+
+  printf("\nDigite o endereco da pessoa: ");
+  scanf("%s", &p->end);
+
+  printf("\nDigite a cidade da pessoa: ");
+  scanf("%s", &p->cidade);
+
+  printf("\nDigite o estado da pessoa: ");
+  scanf("%s", &p->estado);
+
+  printf("\nDigite o cep da pessoa: ");
+  scanf("%s", &p->cep);
+
+  fwrite(p, sizeof(struct pessoa), 1, pFile);
+  fclose(pFile);
+}
+
+void list(struct pessoa *p){
+	
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+
+  printf("\n\tDados atuais:\n\n");
   
-  while(running == 1){
-    
-    printf("\n\nDeseja continuar? (1) Sim (0) Não: ");
-    scanf("%d", &running);
+  fread(p, sizeof(struct pessoa), 1, pFile);
+  while (!feof(pFile)) {
+    if (p->nome != NULL && p->nome[0] != '\0') {
+      printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p->nome, p->end, p->cidade, p->estado, p->cep);
+		}
+    fread(p, sizeof(struct pessoa), 1, pFile);
+	}
+
+  fclose(pFile);
+
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void search(struct pessoa *p){
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  char nameText[21];
+
+  printf("\n\nPesquisar nome: ");
+  gets(nameText);
+
+  int finded = 0;
+  int j;
+  int achados = 0;
+  fread(p, sizeof(struct pessoa), 1, pFile);
+  while (!feof(pFile)) {
+    if(p->nome != NULL){
+      for(j = 0; j < 21 && (nameText[j] != '\0' || p->nome[j] != '\0'); j++) {
+        if (nameText[j] == p->nome[j]){
+          finded++;
+        }
+        else{
+          finded = 0;
+          break;
+        }
+      }
+      if(finded != 0){
+        achados++;
+        printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p->nome, p->end, p->cidade, p->estado, p->cep);
+      }
+		}
+    fread(p, sizeof(struct pessoa), 1, pFile);
+  }
+  if (achados == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+  fclose(pFile);
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void update(struct pessoa *p){
+
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  char nameText[21];
+
+  printf("\n\nPesquisar nome: ");
+  gets(nameText);
+
+  int finded = 0;
+  int j;
+  int indice = -1;
+
+  fread(p, sizeof(struct pessoa), 1, pFile);
+
+  while (!feof(pFile)) {
+    if(p->nome != NULL){
+      indice++;
+      for(j = 0; j < 21 && (nameText[j] != '\0' || p->nome[j] != '\0'); j++) {
+        if (nameText[j] == p->nome[j]){
+          finded++;
+        }
+        else{
+          finded = 0;
+          break;
+        }
+      }
+      if(finded != 0){
+        printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p->nome, p->end, p->cidade, p->estado, p->cep);
+        break;
+      }
+		}
+    fread(p, sizeof(struct pessoa), 1, pFile);
+  }
+  if (finded == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+  else{
+    printf("\nDigite o novo nome: ");
+    scanf("%s", &p->nome);
+
+    printf("\nDigite o novo endereco: ");
+    scanf("%s", &p->end);
+
+    printf("\nDigite a nova cidade: ");
+    scanf("%s", &p->cidade);
+
+    printf("\nDigite o novo estado: ");
+    scanf("%s", &p->estado);
+
+    printf("\nDigite o novo cep: ");
+    scanf("%s", &p->cep);
+
+    pFile = fopen(filename, "r+");
+    fseek(pFile, sizeof(struct pessoa) * indice, 0);
+    fwrite(p, sizeof(struct pessoa), 1, pFile);
+    fclose(pFile);
+  }
+
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void cleanArrayChar(char* p) {
+  p[0] = '\0';
+}
+
+void delete(struct pessoa *p){
+
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  char nameText[21];
+
+  printf("\n\nPesquisar nome: ");
+  gets(nameText);
+
+  int finded = 0;
+  int j;
+  int indice = -1;
+
+  fread(p, sizeof(struct pessoa), 1, pFile);
+  while (!feof(pFile)) {
+    if(p->nome != NULL){
+      for(j = 0; j < 21 && (nameText[j] != '\0' || p->nome[j] != '\0'); j++) {
+        if (nameText[j] == p->nome[j]){
+          finded++;
+        }
+        else{
+          finded = 0;
+          break;
+        }
+      }
+      if(finded != 0){
+        printf("\tNome: %s - Endereco: %s - Cidade: %s - Estado: %s - CEP: %s\n\n", p->nome, p->end, p->cidade, p->estado, p->cep);
+        break;
+      }
+		}
+
+    fread(p, sizeof(struct pessoa), 1, pFile);
+  }
+  if (finded == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+  else{
+    pFile = fopen(filename, "r+");
+
+    cleanArrayChar(&p->nome);
+    cleanArrayChar(&p->end);
+    cleanArrayChar(&p->cidade);
+    cleanArrayChar(&p->estado);
+    cleanArrayChar(&p->cep);
+
+    fseek(pFile, sizeof(struct pessoa) * indice, 0);
+    fwrite(p, sizeof(struct pessoa), 1, pFile);
+    fclose(pFile);
+
+    printf("\nRegistro deletado!");
+  }
+
+	printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void main() {
+  int menu;
+  struct pessoa pessoas [4];
+
+  while(1){
     system("cls");
+
+    printf("\n(1) Inserir dados");
+    printf("\n(2) Listar dados");
+    printf("\n(3) Procurar dados pelo nome");
+    printf("\n(4) Atualizar dados pelo nome");
+    printf("\n(5) Excluir dados pelo nome");
+    printf("\n(6) Sair");
+    printf("\n\n-> Digite sua acao: ");
+
+    scanf("%i", &menu);
+    getchar();
+
+    switch (menu)
+    {
+      case 1:
+        insert(&pessoas);
+      break;
+      case 2:
+        list(&pessoas);
+      break;
+      case 3:
+        search(&pessoas);
+      break;
+      case 4:
+        update(&pessoas);
+      break;
+      case 5:
+        delete(&pessoas);
+      break;
+      default:
+        exit(0);
+      break;
+    }
   }
 }
 #endif
