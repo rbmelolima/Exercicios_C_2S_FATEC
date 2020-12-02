@@ -193,6 +193,64 @@ void update(struct product* value) {
   getch();
 }
 
+void updateQuantity(struct product* value) {
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  char searchID[9];
+
+  printf("\n\nPesquisar pelo ID: ");
+  gets(searchID);
+
+  int finded = 0;
+  int index = -1;
+
+  fread(value, sizeof(struct product), 1, pFile);
+
+  while (!feof(pFile)) {
+    if (value->id != NULL) {
+      index++;
+
+      for (int j = 0; j < 21 && (searchID[j] != '\0' || value->id[j] != '\0'); j++) {
+        if (searchID[j] == value->id[j]) {
+          finded++;
+        }
+
+        else {
+          finded = 0;
+          break;
+        }
+      }
+
+      if (finded != 0) {
+        printf("\tID: %s   Desc: %s   Quantidade: %s\n", value->id, value->description, value->quantity);
+        break;
+      }
+    }
+
+    fread(value, sizeof(struct product), 1, pFile);
+  }
+
+  if (finded == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+
+  else {
+    printf("\nDigite a quantidade do produto: ");
+    gets(&value->quantity);
+
+    pFile = fopen(filename, "r+");
+
+    fseek(pFile, sizeof(struct product) * index, 0);
+    fwrite(value, sizeof(struct product), 1, pFile);
+    fclose(pFile);
+  }
+
+  printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+
+
 void main() {
   int option = 0;
 
@@ -242,6 +300,7 @@ void main() {
         break;
 
       case 7:
+        updateQuantity(&p);
         break;
 
       case 8:
