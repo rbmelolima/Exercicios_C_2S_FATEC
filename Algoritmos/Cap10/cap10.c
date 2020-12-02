@@ -315,7 +315,93 @@ void delete(struct product* value) {
 
 }
 
+void searchProduct(struct product* value) {
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  char description[255];
 
+  printf("\n\nPesquisar pela descricao: ");
+  gets(description);
+
+  int finded = 0;
+  int j = 0;
+  int achados = 0;
+
+  fread(value, sizeof(struct product), 1, pFile);
+
+  while (!feof(pFile)) {
+    if (value->id != NULL) {
+      for (j = 0; j < 255 && (description[j] != '\0' || value->description[j] != '\0'); j++) {
+        if (description[j] == value->description[j]) {
+          finded++;
+        }
+
+        else {
+          finded = 0;
+          break;
+        }
+      }
+
+      if (finded != 0) {
+        achados++;
+        printf("\tID: %s   Desc: %s   Quantidade: %s\n", value->id, value->description, value->quantity);
+      }
+    }
+
+    fread(value, sizeof(struct product), 1, pFile);
+  }
+
+  if (achados == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+
+  fclose(pFile);
+
+  printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
+
+void searchUnavailable(struct product* value) {
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  
+  int finded = 0;
+  int j = 0;
+  int achados = 0;
+
+  fread(value, sizeof(struct product), 1, pFile);
+
+  while (!feof(pFile)) {
+    if (value->id != NULL) {
+      for (j = 0; j < 255 && (value->quantity[j] != '\0'); j++) {
+        if (value->description[j] == '0' || value->description[j] == "0") {
+          finded++;
+        }
+
+        else {
+          finded = 0;
+          break;
+        }
+      }
+
+      if (finded != 0) {
+        achados++;
+        printf("\tID: %s   Desc: %s   Quantidade: %s\n", value->id, value->description, value->quantity);
+      }
+    }
+
+    fread(value, sizeof(struct product), 1, pFile);
+  }
+
+  if (achados == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+
+  fclose(pFile);
+
+  printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+  getch();
+}
 
 void main() {
   int option = 0;
@@ -347,38 +433,33 @@ void main() {
       case 1:
         add(&p);
         break;
-
       case 2:
         update(&p);
         break;
-
       case 3:
         delete(&p);
         break;
-
       case 4:
+        searchProduct(&p);
         break;
-
       case 5:
         index(&p);
         break;
-
       case 6:
+        searchUnavailable(&p);
         break;
-
       case 7:
         updateQuantity(&p);
         break;
-
       case 8:
       default:
         exit(0);
         break;
-    }
+  }
 
     option = 0;
 
-  } while (option == 0);
+} while (option == 0);
 }
 #endif
 
@@ -392,5 +473,5 @@ void main() {
     scanf("%d", &running);
     system("cls");
   }
-  }
+}
 #endif
