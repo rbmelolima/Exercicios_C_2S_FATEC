@@ -249,6 +249,72 @@ void updateQuantity(struct product* value) {
   getch();
 }
 
+void cleanArrayChar(char* p, int size) {
+  int i;
+  for (i = 0; i < size; i++) {
+    p[i] = '\0';
+  }
+}
+
+void delete(struct product* value) {
+  FILE* pFile;
+  pFile = fopen(filename, "r");
+  char searchID[9];
+
+  printf("\n\nPesquisar pelo ID: ");
+  gets(searchID);
+
+  int finded = 0;
+  int index = -1;
+
+  fread(value, sizeof(struct product), 1, pFile);
+
+  while (!feof(pFile)) {
+    if (value->id != NULL) {
+      index++;
+
+      for (int j = 0; j < 21 && (searchID[j] != '\0' || value->id[j] != '\0'); j++) {
+        if (searchID[j] == value->id[j]) {
+          finded++;
+        }
+
+        else {
+          finded = 0;
+          break;
+        }
+      }
+
+      if (finded != 0) {
+        printf("\tID: %s   Desc: %s   Quantidade: %s\n", value->id, value->description, value->quantity);
+        break;
+      }
+    }
+
+    fread(value, sizeof(struct product), 1, pFile);
+  }
+
+  if (finded == 0) {
+    printf("\n\tNenhum registro foi encontrado.");
+  }
+
+  else {
+    pFile = fopen(filename, "r+");
+
+    cleanArrayChar(&value->id, 9);
+    cleanArrayChar(&value->quantity, 3);
+    cleanArrayChar(&value->description, 255);
+
+    fseek(pFile, sizeof(struct product) * index, 0);
+    fwrite(value, sizeof(struct product), 1, pFile);
+    fclose(pFile);
+
+    printf("\nRegistro deletado!");
+    printf("\n\nPressione qualquer coisa para voltar ao menu... ");
+    getch();
+  }
+
+}
+
 
 
 void main() {
@@ -287,6 +353,7 @@ void main() {
         break;
 
       case 3:
+        delete(&p);
         break;
 
       case 4:
@@ -325,5 +392,5 @@ void main() {
     scanf("%d", &running);
     system("cls");
   }
-}
+  }
 #endif
